@@ -1,7 +1,6 @@
-package com.royce.blood_donation.Service.OTP;
+package com.royce.blood_donation.services.OTP;
 
-import com.royce.blood_donation.Model.OtpDetails;
-import lombok.AllArgsConstructor;
+import com.royce.blood_donation.models.OtpDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

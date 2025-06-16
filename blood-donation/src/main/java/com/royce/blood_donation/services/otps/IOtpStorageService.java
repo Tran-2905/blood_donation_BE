@@ -1,6 +1,6 @@
-package com.royce.blood_donation.Service.OTP;
+package com.royce.blood_donation.services.OTP;
 
-import com.royce.blood_donation.Model.OtpDetails;
+import com.royce.blood_donation.models.OtpDetails;
 
 public interface IOtpStorageService {
     public void storeOtp(String email, String otp);
