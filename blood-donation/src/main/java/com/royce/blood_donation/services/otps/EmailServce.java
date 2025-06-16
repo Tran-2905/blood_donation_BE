@@ -1,4 +1,4 @@
-package com.royce.blood_donation.services.OTP;
+package com.royce.blood_donation.services.otps;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

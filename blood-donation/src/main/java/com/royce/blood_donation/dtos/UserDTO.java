@@ -1,15 +1,11 @@
-package com.royce.blood_donation.DTO;
+package com.royce.blood_donation.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.royce.blood_donation.Model.BaseEntity;
-import com.royce.blood_donation.Model.enums.Role;
-import jakarta.persistence.Entity;
+import com.royce.blood_donation.models.enums.Role;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.JoinColumn;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 

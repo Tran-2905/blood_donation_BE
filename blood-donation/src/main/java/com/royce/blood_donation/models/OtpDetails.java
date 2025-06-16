@@ -1,4 +1,4 @@
-package com.royce.blood_donation.Model;
+package com.royce.blood_donation.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,14 +1,12 @@
-package com.royce.blood_donation.Model;
+package com.royce.blood_donation.models;
 
-import com.royce.blood_donation.Model.enums.BloodComponent;
-import com.royce.blood_donation.Model.enums.Role;
+import com.royce.blood_donation.models.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -76,6 +74,9 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "date_of_birth")
+    private Date dateOfBirth;
+
     @Column (name = "password_hash", nullable = false)
     private String passwordHash;
 
@@ -101,8 +102,7 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "facebook_account")
     private String facebookAccount;
 
-    @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+
 
 
 }

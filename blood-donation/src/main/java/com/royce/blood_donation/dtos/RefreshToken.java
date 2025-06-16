@@ -1,4 +1,4 @@
-package com.royce.blood_donation.DTO;
+package com.royce.blood_donation.dtos;
 
 import lombok.*;
 

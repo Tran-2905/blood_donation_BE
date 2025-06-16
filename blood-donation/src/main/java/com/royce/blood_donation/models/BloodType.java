@@ -1,6 +1,6 @@
-package com.royce.blood_donation.Model;
+package com.royce.blood_donation.models;
 
-import com.royce.blood_donation.Model.enums.RhType;
+import com.royce.blood_donation.models.enums.RhType;
 import jakarta.persistence.*;
 import lombok.*;
 

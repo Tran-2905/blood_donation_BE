@@ -1,4 +1,4 @@
-package com.royce.blood_donation.Service;
+package com.royce.blood_donation.services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 

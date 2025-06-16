@@ -1,4 +1,4 @@
-package com.royce.blood_donation.services.OTP;
+package com.royce.blood_donation.services.otps;
 
 import com.royce.blood_donation.models.OtpDetails;
 import org.springframework.stereotype.Service;

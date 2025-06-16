@@ -1,12 +1,9 @@
-package com.royce.blood_donation.Controller;
+package com.royce.blood_donation.controllers;
 
-import com.royce.blood_donation.DTO.LoginUserDTO;
-import com.royce.blood_donation.DTO.UserDTO;
-import com.royce.blood_donation.Model.User;
-import com.royce.blood_donation.Service.IUserService;
-import com.royce.blood_donation.Service.UserService;
+import com.royce.blood_donation.dtos.LoginUserDTO;
+import com.royce.blood_donation.dtos.UserDTO;
+import com.royce.blood_donation.services.IUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

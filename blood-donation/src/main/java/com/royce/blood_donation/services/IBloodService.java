@@ -1,9 +1,9 @@
-package com.royce.blood_donation.Service;
+package com.royce.blood_donation.services;
 
-import com.royce.blood_donation.Model.BloodCapacity;
-import com.royce.blood_donation.Model.BloodType;
-import com.royce.blood_donation.Response.BloodCapacityResponse;
-import com.royce.blood_donation.Response.BloodTypeResponse;
+import com.royce.blood_donation.models.BloodCapacity;
+import com.royce.blood_donation.models.BloodType;
+import com.royce.blood_donation.responses.BloodCapacityResponse;
+import com.royce.blood_donation.responses.BloodTypeResponse;
 
 import java.util.List;
 

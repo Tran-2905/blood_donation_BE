@@ -1,19 +1,19 @@
-package com.royce.blood_donation.Service;
+package com.royce.blood_donation.services;
 
-import com.royce.blood_donation.Model.BloodCapacity;
-import com.royce.blood_donation.Model.BloodType;
-import com.royce.blood_donation.Repository.IBloodCapacityRepository;
-import com.royce.blood_donation.Repository.IBloodComponentRepository;
-import com.royce.blood_donation.Repository.IBloodTypeRepository;
-import com.royce.blood_donation.Response.BloodCapacityResponse;
-import com.royce.blood_donation.Response.BloodTypeResponse;
+import com.royce.blood_donation.models.BloodCapacity;
+import com.royce.blood_donation.models.BloodType;
+import com.royce.blood_donation.repositories.IBloodCapacityRepository;
+import com.royce.blood_donation.repositories.IBloodComponentRepository;
+import com.royce.blood_donation.repositories.IBloodTypeRepository;
+import com.royce.blood_donation.responses.BloodCapacityResponse;
+import com.royce.blood_donation.responses.BloodTypeResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.royce.blood_donation.Response.BloodCapacityResponse.*;
+import static com.royce.blood_donation.responses.BloodCapacityResponse.*;
 
 @Service
 @RequiredArgsConstructor
@@ -29,7 +29,7 @@ public class BloodService implements IBloodService {
 
     @Override
     public BloodType getBloodTypeById(int id) {
-        return typeRepository.findById(id).orElse(null);
+        return typeRepository.findById(id);
     }
 
     @Override

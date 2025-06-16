@@ -1,20 +1,13 @@
-package com.royce.blood_donation.Controller;
+package com.royce.blood_donation.controllers;
 
-import com.royce.blood_donation.Model.BloodType;
-import com.royce.blood_donation.Response.BloodCapacityResponse;
-import com.royce.blood_donation.Response.BloodTypeResponse;
-import com.royce.blood_donation.Service.BloodService;
-import com.royce.blood_donation.Service.IBloodService;
-import jakarta.validation.Valid;
+import com.royce.blood_donation.responses.BloodCapacityResponse;
+import com.royce.blood_donation.responses.BloodTypeResponse;
+import com.royce.blood_donation.services.IBloodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

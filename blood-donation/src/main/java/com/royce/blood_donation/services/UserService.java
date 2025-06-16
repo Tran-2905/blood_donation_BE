@@ -1,19 +1,18 @@
-package com.royce.blood_donation.Service;
+package com.royce.blood_donation.services;
 
-import com.royce.blood_donation.DTO.LoginUserDTO;
-import com.royce.blood_donation.DTO.RefreshToken;
-import com.royce.blood_donation.DTO.UserDTO;
-import com.royce.blood_donation.Model.User;
-import com.royce.blood_donation.Model.enums.Role;
-import com.royce.blood_donation.Repository.IUserRepository;
-import com.royce.blood_donation.Response.AuthenticationResponse;
+import com.royce.blood_donation.dtos.LoginUserDTO;
+import com.royce.blood_donation.dtos.RefreshToken;
+import com.royce.blood_donation.dtos.UserDTO;
+import com.royce.blood_donation.models.User;
+import com.royce.blood_donation.models.enums.Role;
+import com.royce.blood_donation.repositories.IUserRepository;
+import com.royce.blood_donation.responses.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.HashMap;
 
 @Service
@@ -27,7 +26,7 @@ public class UserService implements IUserService {
         return new BCryptPasswordEncoder();
     }
     @Override
-    public User createUser(UserDTO userDTO) {
+    public void createUser(UserDTO userDTO) {
         if(userRepository.existsByPhoneNumber(userDTO.getPhoneNumber())) {
             throw new RuntimeException("Phone number already exists");
         }
@@ -53,7 +52,7 @@ public class UserService implements IUserService {
                 .googleAccount(userDTO.getGoogleAccountId())
                 .dateOfBirth(userDTO.getDateOfBirth())
                 .build();
-         return userRepository.save(user);
+        userRepository.save(user);
     }
 
     @Override

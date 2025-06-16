@@ -1,6 +1,5 @@
-package com.royce.blood_donation.Response;
+package com.royce.blood_donation.responses;
 
-import com.royce.blood_donation.Model.User;
 import lombok.*;
 
 @Setter

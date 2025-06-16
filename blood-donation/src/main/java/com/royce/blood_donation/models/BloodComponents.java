@@ -1,7 +1,7 @@
-package com.royce.blood_donation.Model;
+package com.royce.blood_donation.models;
 
-import com.royce.blood_donation.Converter.BloodComponentConverter;
-import com.royce.blood_donation.Model.enums.BloodComponent;
+import com.royce.blood_donation.converter.BloodComponentConverter;
+import com.royce.blood_donation.models.enums.BloodComponent;
 import jakarta.persistence.*;
 import lombok.*;
 

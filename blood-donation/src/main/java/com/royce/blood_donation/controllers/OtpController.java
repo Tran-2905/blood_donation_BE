@@ -1,10 +1,8 @@
-    package com.royce.blood_donation.Controller;
+    package com.royce.blood_donation.controllers;
 
-    import com.royce.blood_donation.Model.OtpDetails;
-    import com.royce.blood_donation.Service.OTP.EmailServce;
-    import com.royce.blood_donation.Service.OTP.IEmailService;
-    import com.royce.blood_donation.Service.OTP.IOtpStorageService;
-    import com.royce.blood_donation.Service.OTP.OtpStorageService;
+    import com.royce.blood_donation.models.OtpDetails;
+    import com.royce.blood_donation.services.otps.IEmailService;
+    import com.royce.blood_donation.services.otps.IOtpStorageService;
     import lombok.RequiredArgsConstructor;
     import org.springframework.web.bind.annotation.*;
 

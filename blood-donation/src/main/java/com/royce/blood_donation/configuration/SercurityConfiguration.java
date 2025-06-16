@@ -1,9 +1,6 @@
-package com.royce.blood_donation.Configuration;
+package com.royce.blood_donation.configuration;
 
-import com.royce.blood_donation.Repository.IUserRepository;
-import com.royce.blood_donation.Service.IJWTService;
-import com.royce.blood_donation.Service.IUserService;
-import com.royce.blood_donation.Service.JWTService;
+import com.royce.blood_donation.repositories.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
