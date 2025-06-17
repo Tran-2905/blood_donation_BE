@@ -9,11 +9,18 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginUserDTO {
+public class UserLoginDTO {
     @JsonProperty("phone_number")
     @NotBlank(message = "Phone number can not be null")
     private String phoneNumber;
+
     @JsonProperty("password_hash")
     @NotBlank(message = "password can not be null")
     private String password;
+
+    @JsonProperty("facebook_account")
+    private String facebookAccount;
+
+    @JsonProperty("google_account")
+    private String googleAccount;
 }

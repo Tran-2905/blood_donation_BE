@@ -18,6 +18,37 @@ spring:
    title: Tên API của bạn
    version: v1
    description: Mô tả API của bạn
+ security:
+  oauth2:
+   client:
+    registration:
+     google:
+      client-id: 331644149748-lq5svlpe8d0je01ulmpblecb2r24l780.apps.googleusercontent.com
+      client-secret: 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
+      redirect-uri: "{baseUrl}/login/oauth2/code/google"
+      scope: openid, profile, email
+      client-name: Google
+      authorization-grant-type: authorization_code
+      provider: google
+     facebook:
+      client-id: 1007654770988152
+      client-secret: 5adb1d315754ac7e7e26b09d4c8b8b17
+      redirect-uri: "{baseUrl}/auth/facebook/callback"
+      scope: email, public_profile
+      client-name: Facebook
+      authorization-grant-type: authorization_code
+      provider: facebook
+    provider:
+     google:
+      authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+      token-uri: https://oauth2.googleapis.com/token
+      user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+      user-name-attribute: sub
+     facebook:
+      authorization-uri: https://www.facebook.com/v21.0/dialog/oauth
+      token-uri: https://graph.facebook.com/oauth/access_token
+      user-info-uri: https://graph.facebook.com/me?fields=id,name,email,picture
+      user-name-attribute: id
 
   properties:
    mail:

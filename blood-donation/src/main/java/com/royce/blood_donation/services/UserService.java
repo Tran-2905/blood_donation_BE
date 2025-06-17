@@ -1,6 +1,6 @@
 package com.royce.blood_donation.services;
 
-import com.royce.blood_donation.dtos.LoginUserDTO;
+import com.royce.blood_donation.dtos.UserLoginDTO;
 import com.royce.blood_donation.dtos.RefreshToken;
 import com.royce.blood_donation.dtos.UserDTO;
 import com.royce.blood_donation.models.User;
@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,6 +22,7 @@ import java.util.HashMap;
 public class UserService implements IUserService {
     private final IUserRepository userRepository;
     private final JWTService jwtService;
+
 
     private PasswordEncoder passwordEncoder (){
         return new BCryptPasswordEncoder();
@@ -56,11 +58,11 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public AuthenticationResponse login(LoginUserDTO loginUserDTO) {
+    public AuthenticationResponse login(UserLoginDTO userLoginDTO) {
         AuthenticationResponse authenticationResponse = new AuthenticationResponse();
-        if(userRepository.existsByPhoneNumber(loginUserDTO.getPhoneNumber())) {
-            User user = userRepository.findByPhoneNumber(loginUserDTO.getPhoneNumber()).orElseThrow(()->new RuntimeException("User not found"));
-            if(passwordEncoder().matches(loginUserDTO.getPassword(), user.getPassword())) {
+        if(userRepository.existsByPhoneNumber(userLoginDTO.getPhoneNumber())) {
+            User user = userRepository.findByPhoneNumber(userLoginDTO.getPhoneNumber()).orElseThrow(()->new RuntimeException("User not found"));
+            if(passwordEncoder().matches(userLoginDTO.getPassword(), user.getPassword())) {
 //                authenticationResponse.setUser(user);
                 authenticationResponse.setToken(jwtService.generateToken(user));
                 authenticationResponse.setRefreshToken(jwtService.generateRefreshToken(new HashMap<>(),user));
@@ -73,16 +75,18 @@ public class UserService implements IUserService {
         return userRepository.findByPhoneNumber(phoneNumber).orElseThrow(()->new RuntimeException("User not found"));
     }
 
+
     public AuthenticationResponse refreshToken(RefreshToken refreshToken) {
         String phoneNumber = jwtService.extractUsername(refreshToken.getToken());
         User user = getUserByPhoneNumber(phoneNumber);
-        if(jwtService.validateToken(refreshToken.getToken(), user)) {
+        if (jwtService.validateToken(refreshToken.getToken(), user)) {
             String jwt = jwtService.generateToken(user);
             AuthenticationResponse authenticationResponse = new AuthenticationResponse();
             authenticationResponse.setToken(jwt);
-            authenticationResponse.setRefreshToken(jwtService.generateRefreshToken(new HashMap<>(),user));
+            authenticationResponse.setRefreshToken(jwtService.generateRefreshToken(new HashMap<>(), user));
             return authenticationResponse;
         }
         return null;
     }
+
 }
