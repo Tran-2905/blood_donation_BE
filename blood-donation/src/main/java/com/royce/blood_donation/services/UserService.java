@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -87,6 +88,21 @@ public class UserService implements IUserService {
             return authenticationResponse;
         }
         return null;
+    }
+
+    public User findOrCreateUserFromOAuth(String email, String googleId, String firstName, String lastName) {
+        User user = userRepository.findByGoogleAccount(googleId)
+                .orElseGet(() -> {
+                    User newUser = new User();
+                    newUser.setEmail(email);
+                    newUser.setGoogleAccount(googleId);
+                    newUser.setFirstName(firstName);
+                    newUser.setLastName(lastName);
+                    newUser.setRole(Role.User);
+                    newUser.setBloodTypeId(9);
+                    return newUser;
+                });
+        return userRepository.save(user);
     }
 
 }

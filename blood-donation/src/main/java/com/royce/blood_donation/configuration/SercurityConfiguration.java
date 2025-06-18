@@ -1,5 +1,6 @@
 package com.royce.blood_donation.configuration;
 
+import com.royce.blood_donation.handler.CustomOAuth2SuccessHandler;
 import com.royce.blood_donation.repositories.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +36,7 @@ public class SercurityConfiguration {
     private String apiPrefix;
     private final JWTAuthenticationFilter jwtAuthenticationFilter;
     private final IUserRepository userRepository;
+    private final CustomOAuth2SuccessHandler customOAuth2SuccessHandler;
     @Bean
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -44,7 +46,7 @@ public class SercurityConfiguration {
                     requests.requestMatchers("**").permitAll();
                 })
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("http://localhost:4200/login/success", true)
+                        .successHandler(customOAuth2SuccessHandler)
                 );
         return http.build();
     }

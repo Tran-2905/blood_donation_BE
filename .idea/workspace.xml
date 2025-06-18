@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6277d4c-c73a-4f4a-a59a-7cee2b45c956" name="Changes" comment="API BloodCapacity ok">
-      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/TestGoogleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/dtos/UserLoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/responses/ResponseUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/handler/CustomOAuth2SuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/BloodDonationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/BloodDonationApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/dtos/LoginUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/TestGoogleController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -239,7 +232,9 @@
       <workItem from="1750153275271" duration="2391000" />
       <workItem from="1750157315606" duration="15000" />
       <workItem from="1750159072219" duration="474000" />
-      <workItem from="1750164031553" duration="10584000" />
+      <workItem from="1750164031553" duration="12870000" />
+      <workItem from="1750239098244" duration="1635000" />
+      <workItem from="1750251201305" duration="15018000" />
     </task>
     <task id="LOCAL-00001" summary="API BloodCapacity ok">
       <option name="closed" value="true" />
@@ -280,12 +275,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java</url>
-          <line>61</line>
+          <line>62</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -335,8 +330,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java</url>
-          <line>54</line>
+          <line>56</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/handler/CustomOAuth2SuccessHandler.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

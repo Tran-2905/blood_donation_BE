@@ -82,3 +82,5 @@ jwt:
  expiration: 2592000
  secretKey: Xp/b5+tEAufHBk9CiQzd9XK1Vs8iLG8Nk+ohg2Jq2qM=
 
+frontend:
+ redirect-url: http://localhost:4200/login/success
