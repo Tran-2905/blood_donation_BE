@@ -3,11 +3,13 @@ package com.royce.blood_donation.services;
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
 import com.royce.blood_donation.models.RequestDonation;
+import com.royce.blood_donation.models.User;
 import com.royce.blood_donation.models.enums.Status;
 import com.royce.blood_donation.repositories.IBloodTypeRepository;
 import com.royce.blood_donation.repositories.IDonationRegistrationRepository;
 import com.royce.blood_donation.repositories.IUserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,9 +18,10 @@ public class DonationRegistration implements IDonationRegistration {
     private final IDonationRegistrationRepository donationRegistrationRepository;
     private final IUserRepository userRepository;
     private final IBloodTypeRepository bloodTypeRepository;
-    public void createRequestDonation(RequestDonationDTO requestDonationDTO) {
+    public void createRequestDonation(RequestDonationDTO requestDonationDTO, User user) {
+
         RequestDonation requestDonation = RequestDonation.builder()
-                .user(userRepository.findUserById(requestDonationDTO.getUserId()))
+                .user(userRepository.findUserById(user.getId()))
                 .fullName(requestDonationDTO.getFullName())
                 .phoneNumber(requestDonationDTO.getPhoneNumber())
                 .email(requestDonationDTO.getEmail())

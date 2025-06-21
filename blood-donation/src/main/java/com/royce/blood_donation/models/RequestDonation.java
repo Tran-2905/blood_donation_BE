@@ -56,7 +56,7 @@ public class RequestDonation extends BaseEntity{
     private Date availableDate;
 
     @Column(name = "available_time")
-    private Time availableTime;
+    private String availableTime;
 
     private String notes;
 

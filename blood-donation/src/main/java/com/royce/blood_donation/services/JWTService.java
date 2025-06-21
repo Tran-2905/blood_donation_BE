@@ -1,5 +1,6 @@
 package com.royce.blood_donation.services;
 
+import com.royce.blood_donation.models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -26,17 +27,20 @@ public class JWTService implements IJWTService {
     private int expiration;
 
 
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(User user) {
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
+                .setSubject(user.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+                .claim("userId", user.getId())
+                .claim("role", user.getRole())
+                .claim("blood-type-id", user.getBloodTypeId())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000L * expiration ))
                 .signWith(getSigninKey(), SignatureAlgorithm.HS256)
                 .compact();
 
     }
 
-    public String generateRefreshToken(Map<String, Objects> extractClaims, UserDetails userDetails) {
+    public String generateRefreshToken(Map<String, Objects> extractClaims, User userDetails) {
         return Jwts.builder()
                 .setClaims(extractClaims)
                 .setSubject(userDetails.getUsername())
@@ -56,8 +60,10 @@ public class JWTService implements IJWTService {
         return extractClaim(token, Claims::getSubject);
     }
 
+
+
     private Key getSigninKey() {
-        byte[] key = Decoders.BASE64.decode(secretKey);
+        byte[] key = Decoders.BASE64URL.decode(secretKey);
         return Keys.hmacShaKeyFor(key);
     }
 

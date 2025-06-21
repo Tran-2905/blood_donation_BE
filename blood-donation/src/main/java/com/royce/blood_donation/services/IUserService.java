@@ -11,7 +11,5 @@ public interface IUserService {
 
     AuthenticationResponse login(UserLoginDTO userLoginDTO);
 
-    User getUserByPhoneNumber(String phoneNumber);
-
     public AuthenticationResponse refreshToken(RefreshToken refreshToken);
 }

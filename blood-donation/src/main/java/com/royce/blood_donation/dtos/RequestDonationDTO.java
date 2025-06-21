@@ -17,9 +17,6 @@ import java.util.Date;
 @Builder
 public class RequestDonationDTO {
 
-    @JsonProperty("user_id")
-    private Long userId;
-
     @JsonProperty("full_name")
     private String fullName;
 
@@ -50,7 +47,7 @@ public class RequestDonationDTO {
     private Date availableDate;
 
     @JsonProperty("available_time")
-    private Time availableTime;
+    private String availableTime;
 
     private String notes;
 

@@ -39,7 +39,6 @@ public class UserService implements IUserService {
         if(userDTO.getFacebookAccountId()==null || userDTO.getGoogleAccountId()==null){
             userDTO.setPassword(passwordEncoder().encode(userDTO.getPassword()));
         }
-
          User user = User.builder()
                 .phoneNumber(userDTO.getPhoneNumber())
                 .email(userDTO.getEmail())
@@ -61,8 +60,8 @@ public class UserService implements IUserService {
     @Override
     public AuthenticationResponse login(UserLoginDTO userLoginDTO) {
         AuthenticationResponse authenticationResponse = new AuthenticationResponse();
-        if(userRepository.existsByPhoneNumber(userLoginDTO.getPhoneNumber())) {
-            User user = userRepository.findByPhoneNumber(userLoginDTO.getPhoneNumber()).orElseThrow(()->new RuntimeException("User not found"));
+        if(userRepository.existsByEmail(userLoginDTO.getEmail())) {
+            User user = userRepository.findByEmail(userLoginDTO.getEmail()).orElseThrow(()->new RuntimeException("User not found"));
             if(passwordEncoder().matches(userLoginDTO.getPassword(), user.getPassword())) {
 //                authenticationResponse.setUser(user);
                 authenticationResponse.setToken(jwtService.generateToken(user));
@@ -72,14 +71,10 @@ public class UserService implements IUserService {
         return authenticationResponse;
     }
 
-    public User getUserByPhoneNumber(String phoneNumber) {
-        return userRepository.findByPhoneNumber(phoneNumber).orElseThrow(()->new RuntimeException("User not found"));
-    }
-
 
     public AuthenticationResponse refreshToken(RefreshToken refreshToken) {
         String phoneNumber = jwtService.extractUsername(refreshToken.getToken());
-        User user = getUserByPhoneNumber(phoneNumber);
+        User user = userRepository.getUsersByEmail(phoneNumber);
         if (jwtService.validateToken(refreshToken.getToken(), user)) {
             String jwt = jwtService.generateToken(user);
             AuthenticationResponse authenticationResponse = new AuthenticationResponse();
@@ -91,7 +86,8 @@ public class UserService implements IUserService {
     }
 
     public User findOrCreateUserFromOAuth(String email, String googleId, String firstName, String lastName) {
-        User user = userRepository.findByGoogleAccount(googleId)
+
+        User user = userRepository.findByEmail(email)
                 .orElseGet(() -> {
                     User newUser = new User();
                     newUser.setEmail(email);
@@ -99,10 +95,13 @@ public class UserService implements IUserService {
                     newUser.setFirstName(firstName);
                     newUser.setLastName(lastName);
                     newUser.setRole(Role.User);
-                    newUser.setBloodTypeId(9);
+                    newUser.setBloodTypeId(10);
                     return newUser;
                 });
+        user.setGoogleAccount(googleId);
         return userRepository.save(user);
     }
+
+
 
 }

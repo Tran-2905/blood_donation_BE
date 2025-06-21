@@ -30,7 +30,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
     @Value("${frontend.redirect-url}")
     private String redirectUrl;
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
 
         // 1. Lấy thông tin từ Google

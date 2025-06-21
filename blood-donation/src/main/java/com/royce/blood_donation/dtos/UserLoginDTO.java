@@ -10,9 +10,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserLoginDTO {
-    @JsonProperty("phone_number")
-    @NotBlank(message = "Phone number can not be null")
-    private String phoneNumber;
+    @JsonProperty("email")
+    @NotBlank(message = "email can not be null")
+    private String email;
 
     @JsonProperty("password_hash")
     @NotBlank(message = "password can not be null")
