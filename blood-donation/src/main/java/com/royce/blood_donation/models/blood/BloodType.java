@@ -1,4 +1,4 @@
-package com.royce.blood_donation.models;
+package com.royce.blood_donation.models.blood;
 
 import com.royce.blood_donation.models.enums.RhType;
 import jakarta.persistence.*;

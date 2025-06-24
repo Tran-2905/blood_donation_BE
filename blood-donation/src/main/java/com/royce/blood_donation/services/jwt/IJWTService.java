@@ -1,6 +1,6 @@
-package com.royce.blood_donation.services;
+package com.royce.blood_donation.services.jwt;
 
-import com.royce.blood_donation.models.User;
+import com.royce.blood_donation.models.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Map;

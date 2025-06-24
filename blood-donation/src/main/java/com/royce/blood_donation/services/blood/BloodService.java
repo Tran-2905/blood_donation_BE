@@ -1,9 +1,8 @@
-package com.royce.blood_donation.services;
+package com.royce.blood_donation.services.blood;
 
-import com.royce.blood_donation.models.BloodCapacity;
-import com.royce.blood_donation.models.BloodComponents;
-import com.royce.blood_donation.models.BloodType;
-import com.royce.blood_donation.models.enums.BloodComponent;
+import com.royce.blood_donation.models.blood.BloodCapacity;
+import com.royce.blood_donation.models.blood.BloodComponents;
+import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.repositories.IBloodCapacityRepository;
 import com.royce.blood_donation.repositories.IBloodComponentRepository;
 import com.royce.blood_donation.repositories.IBloodTypeRepository;
@@ -12,7 +11,6 @@ import com.royce.blood_donation.responses.BloodTypeResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.royce.blood_donation.responses.BloodCapacityResponse.*;

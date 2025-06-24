@@ -1,6 +1,6 @@
 package com.royce.blood_donation.services.otps;
 
-import com.royce.blood_donation.models.OtpDetails;
+import com.royce.blood_donation.models.otp.OtpDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

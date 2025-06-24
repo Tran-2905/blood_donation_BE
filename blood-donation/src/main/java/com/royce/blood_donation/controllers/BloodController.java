@@ -1,10 +1,8 @@
 package com.royce.blood_donation.controllers;
 
-import com.royce.blood_donation.models.BloodComponents;
-import com.royce.blood_donation.models.enums.BloodComponent;
 import com.royce.blood_donation.responses.BloodCapacityResponse;
 import com.royce.blood_donation.responses.BloodTypeResponse;
-import com.royce.blood_donation.services.IBloodService;
+import com.royce.blood_donation.services.blood.IBloodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,13 +1,10 @@
 package com.royce.blood_donation.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.royce.blood_donation.models.User;
 import com.royce.blood_donation.models.enums.Gender;
-import com.royce.blood_donation.models.enums.Status;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Time;
 import java.util.Date;
 @Data
 @Getter

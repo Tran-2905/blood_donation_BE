@@ -1,6 +1,6 @@
 package com.royce.blood_donation.repositories;
 
-import com.royce.blood_donation.models.User;
+import com.royce.blood_donation.models.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

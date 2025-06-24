@@ -1,4 +1,4 @@
-package com.royce.blood_donation.models;
+package com.royce.blood_donation.models.blood;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

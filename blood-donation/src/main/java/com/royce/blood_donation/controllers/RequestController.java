@@ -1,16 +1,12 @@
 package com.royce.blood_donation.controllers;
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
-import com.royce.blood_donation.models.User;
-import com.royce.blood_donation.services.DonationRegistration;
-import com.royce.blood_donation.services.IDonationRegistration;
+import com.royce.blood_donation.models.user.User;
+import com.royce.blood_donation.services.request.IDonationRegistration;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springdoc.webmvc.core.service.RequestService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;

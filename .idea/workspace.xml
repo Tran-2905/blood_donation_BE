@@ -5,14 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6277d4c-c73a-4f4a-a59a-7cee2b45c956" name="Changes" comment="API BloodCapacity ok">
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/dtos/PostDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blog/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blog/FeaturedPost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blog/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blog/PostCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blog/PostCategoryId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/user/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IPostRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IUserProfileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/post/IPostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/post/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b3c83e0-7105-4ce7-b06f-72f6260093e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b3c83e0-7105-4ce7-b06f-72f6260093e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/MapperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/MapperConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/BloodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/BloodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/OtpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/OtpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/dtos/RequestDonationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/dtos/RequestDonationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/handler/CustomOAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/handler/CustomOAuth2SuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/Blog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/BloodCapacity.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blood/BloodCapacity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/BloodCapacityId.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blood/BloodCapacityId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/BloodComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blood/BloodComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/BloodType.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/blood/BloodType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/OtpDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/otp/OtpDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/RequestDonation.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/request/RequestDonation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/models/enums/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodCapacityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodCapacityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodComponentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodComponentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IBloodTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IDonationRegistrationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IDonationRegistrationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/repositories/IUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/responses/BloodCapacityResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/responses/BloodCapacityResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/BloodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/BloodService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IBloodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IBloodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/responses/BloodTypeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/responses/BloodTypeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/BloodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/blood/BloodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/DonationRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/request/DonationRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IBloodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/blood/IBloodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IDonationRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/request/IDonationRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IJWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/jwt/IJWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/user/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/jwt/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/otps/IOtpStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/otps/IOtpStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/otps/OtpStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/otps/OtpStorageService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -52,7 +94,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BloodDonationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BloodDonationApplication.executor&quot;: &quot;Debug&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Downloads/BloodDonationproject/blood_donation_BE&quot;,
@@ -264,6 +306,10 @@
       <workItem from="1750658111256" duration="6762000" />
       <workItem from="1750667011838" duration="4745000" />
       <workItem from="1750682300876" duration="2008000" />
+      <workItem from="1750753742454" duration="14438000" />
+      <workItem from="1750772762005" duration="34000" />
+      <workItem from="1750772819984" duration="821000" />
+      <workItem from="1750774451751" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="API BloodCapacity ok">
       <option name="closed" value="true" />
@@ -299,37 +345,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java</url>
-          <line>37</line>
+          <line>28</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java</url>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/user/UserService.java</url>
           <line>32</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/UserService.java</url>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/user/UserService.java</url>
           <line>61</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/JWTAuthenticationFilter.java</url>
-          <line>47</line>
+          <line>42</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/UserController.java</url>
-          <line>50</line>
+          <line>41</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/JWTService.java</url>
-          <line>31</line>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/jwt/JWTService.java</url>
+          <line>32</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/JWTService.java</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/jwt/JWTService.java</url>
+          <line>45</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -338,39 +384,49 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/BloodService.java</url>
-          <line>43</line>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/blood/BloodService.java</url>
+          <line>41</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/DonationRegistration.java</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/request/DonationRegistration.java</url>
+          <line>19</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/RequestController.java</url>
-          <line>28</line>
+          <line>24</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/SercurityConfiguration.java</url>
-          <line>83</line>
+          <line>87</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/handler/CustomOAuth2SuccessHandler.java</url>
-          <line>33</line>
+          <line>30</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/configuration/JWTAuthenticationFilter.java</url>
-          <line>32</line>
+          <line>27</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/BloodController.java</url>
-          <line>28</line>
+          <line>26</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/controllers/PostController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blood-donation/src/main/java/com/royce/blood_donation/services/post/PostService.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

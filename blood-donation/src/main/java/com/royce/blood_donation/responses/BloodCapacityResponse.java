@@ -1,7 +1,7 @@
 package com.royce.blood_donation.responses;
 
-import com.royce.blood_donation.models.BloodCapacity;
-import com.royce.blood_donation.models.BloodType;
+import com.royce.blood_donation.models.blood.BloodCapacity;
+import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.models.enums.RhType;
 import lombok.*;
 

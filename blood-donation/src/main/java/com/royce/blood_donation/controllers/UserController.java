@@ -2,24 +2,15 @@ package com.royce.blood_donation.controllers;
 
 import com.royce.blood_donation.dtos.UserLoginDTO;
 import com.royce.blood_donation.dtos.UserDTO;
-import com.royce.blood_donation.models.User;
-import com.royce.blood_donation.responses.ResponseUser;
-import com.royce.blood_donation.services.IJWTService;
-import com.royce.blood_donation.services.IUserService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
+import com.royce.blood_donation.services.jwt.IJWTService;
+import com.royce.blood_donation.services.user.IUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

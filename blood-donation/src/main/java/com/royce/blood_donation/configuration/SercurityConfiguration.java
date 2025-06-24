@@ -2,6 +2,7 @@ package com.royce.blood_donation.configuration;
 
 import com.royce.blood_donation.handler.CustomOAuth2SuccessHandler;
 import com.royce.blood_donation.repositories.IUserRepository;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +37,7 @@ import static org.springframework.http.HttpMethod.POST;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SercurityConfiguration {
+    public class SercurityConfiguration {
     @Value("$api.prefix")
     private String apiPrefix;
     private final JWTAuthenticationFilter jwtAuthenticationFilter;
@@ -44,26 +45,29 @@ public class SercurityConfiguration {
     private final CustomOAuth2SuccessHandler customOAuth2SuccessHandler;
     @Bean
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .cors().and()
-                .csrf().disable()
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .exceptionHandling(customizer -> customizer.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
-                .exceptionHandling(e ->
-                        e.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-                )
-                .authorizeHttpRequests(requests -> {
-                    requests
-                            .requestMatchers(POST,"/api/v1/request-donation/**").authenticated()
-                            .anyRequest().permitAll();
+            http
+                    .cors().and()
+                    .csrf().disable()
+                    .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                    .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                    .exceptionHandling(customizer -> customizer.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
+                    .exceptionHandling(e ->
+                            e.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                    )
+                    .authorizeHttpRequests(requests -> {
+                        requests
+                                .requestMatchers(POST, "/api/v1/request-donation/**").authenticated()
+                                .requestMatchers(POST, "/api/v1/posts/**").authenticated()
+                                .anyRequest().permitAll();
 
-                })
-                .oauth2Login(oauth2 -> oauth2
-                        .successHandler(customOAuth2SuccessHandler)
-                );
-        return http.build();
-    }
+                    })
+                    .oauth2Login(oauth2 -> oauth2
+                            .successHandler(customOAuth2SuccessHandler)
+                    );
+            return http.build();
+        }
+
+
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {

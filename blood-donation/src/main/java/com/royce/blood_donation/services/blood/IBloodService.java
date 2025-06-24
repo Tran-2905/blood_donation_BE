@@ -1,9 +1,8 @@
-package com.royce.blood_donation.services;
+package com.royce.blood_donation.services.blood;
 
-import com.royce.blood_donation.models.BloodCapacity;
-import com.royce.blood_donation.models.BloodComponents;
-import com.royce.blood_donation.models.BloodType;
-import com.royce.blood_donation.models.enums.BloodComponent;
+import com.royce.blood_donation.models.blood.BloodCapacity;
+import com.royce.blood_donation.models.blood.BloodComponents;
+import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.responses.BloodCapacityResponse;
 import com.royce.blood_donation.responses.BloodTypeResponse;
 

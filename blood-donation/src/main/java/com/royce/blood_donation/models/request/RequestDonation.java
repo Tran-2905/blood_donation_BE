@@ -1,11 +1,13 @@
-package com.royce.blood_donation.models;
+package com.royce.blood_donation.models.request;
 
+import com.royce.blood_donation.models.BaseEntity;
+import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.models.enums.Gender;
 import com.royce.blood_donation.models.enums.Status;
+import com.royce.blood_donation.models.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Time;
 import java.util.Date;
 
 @Setter
@@ -16,7 +18,7 @@ import java.util.Date;
 @Entity
 @Builder
 @Table(name = "donation_registrations")
-public class RequestDonation extends BaseEntity{
+public class RequestDonation extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "registration_id")

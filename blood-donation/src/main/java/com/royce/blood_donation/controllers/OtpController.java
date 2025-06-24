@@ -1,6 +1,6 @@
     package com.royce.blood_donation.controllers;
 
-    import com.royce.blood_donation.models.OtpDetails;
+    import com.royce.blood_donation.models.otp.OtpDetails;
     import com.royce.blood_donation.services.otps.IEmailService;
     import com.royce.blood_donation.services.otps.IOtpStorageService;
     import lombok.RequiredArgsConstructor;

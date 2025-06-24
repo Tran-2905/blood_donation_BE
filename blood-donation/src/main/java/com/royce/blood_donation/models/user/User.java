@@ -1,5 +1,6 @@
-package com.royce.blood_donation.models;
+package com.royce.blood_donation.models.user;
 
+import com.royce.blood_donation.models.BaseEntity;
 import com.royce.blood_donation.models.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,7 +24,7 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(
-                new SimpleGrantedAuthority(role.name())
+                new SimpleGrantedAuthority("ROLE_"+role.name())
         );
     }
 

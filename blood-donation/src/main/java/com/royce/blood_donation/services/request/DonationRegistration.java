@@ -1,15 +1,14 @@
-package com.royce.blood_donation.services;
+package com.royce.blood_donation.services.request;
 
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
-import com.royce.blood_donation.models.RequestDonation;
-import com.royce.blood_donation.models.User;
+import com.royce.blood_donation.models.request.RequestDonation;
+import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.models.enums.Status;
 import com.royce.blood_donation.repositories.IBloodTypeRepository;
 import com.royce.blood_donation.repositories.IDonationRegistrationRepository;
 import com.royce.blood_donation.repositories.IUserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,11 +1,9 @@
 package com.royce.blood_donation.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.royce.blood_donation.models.User;
-import com.royce.blood_donation.services.JWTService;
-import com.royce.blood_donation.services.UserService;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
+import com.royce.blood_donation.models.user.User;
+import com.royce.blood_donation.services.jwt.JWTService;
+import com.royce.blood_donation.services.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -16,10 +14,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
+
 @RequiredArgsConstructor
 @Component
 public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler {

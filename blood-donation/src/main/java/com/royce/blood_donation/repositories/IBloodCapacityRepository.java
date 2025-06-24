@@ -1,10 +1,9 @@
 package com.royce.blood_donation.repositories;
 
-import com.royce.blood_donation.models.BloodCapacity;
-import com.royce.blood_donation.models.BloodCapacityId;
-import com.royce.blood_donation.models.BloodComponents;
-import com.royce.blood_donation.models.BloodType;
-import com.royce.blood_donation.models.enums.RhType;
+import com.royce.blood_donation.models.blood.BloodCapacity;
+import com.royce.blood_donation.models.blood.BloodCapacityId;
+import com.royce.blood_donation.models.blood.BloodComponents;
+import com.royce.blood_donation.models.blood.BloodType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,21 +1,20 @@
-package com.royce.blood_donation.services;
+package com.royce.blood_donation.services.user;
 
 import com.royce.blood_donation.dtos.UserLoginDTO;
 import com.royce.blood_donation.dtos.RefreshToken;
 import com.royce.blood_donation.dtos.UserDTO;
-import com.royce.blood_donation.models.User;
+import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.models.enums.Role;
 import com.royce.blood_donation.repositories.IUserRepository;
 import com.royce.blood_donation.responses.AuthenticationResponse;
+import com.royce.blood_donation.services.jwt.JWTService;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
