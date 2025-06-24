@@ -1,7 +1,9 @@
 package com.royce.blood_donation.services;
 
 import com.royce.blood_donation.models.BloodCapacity;
+import com.royce.blood_donation.models.BloodComponents;
 import com.royce.blood_donation.models.BloodType;
+import com.royce.blood_donation.models.enums.BloodComponent;
 import com.royce.blood_donation.repositories.IBloodCapacityRepository;
 import com.royce.blood_donation.repositories.IBloodComponentRepository;
 import com.royce.blood_donation.repositories.IBloodTypeRepository;
@@ -38,19 +40,29 @@ public class BloodService implements IBloodService {
     }
 
     @Override
-    public List<BloodCapacityResponse> getAllBloodCapacity() {
-        List<BloodType> bloodTypes = typeRepository.findAll();
-        List<BloodCapacityResponse> bloodCapacityResponses = new ArrayList<>();
-        for (BloodType bloodType : bloodTypes) {
+    public BloodCapacityResponse getAllBloodCapacityByBloodTypeAndBloodComponent(int idBloodType, int idBloodComponent) {
+        BloodType bloodType = typeRepository.findById(idBloodType);
+        BloodCapacityResponse bloodCapacityResponses = null;
             BloodCapacityResponse bloodCapacityResponse = new BloodCapacityResponse();
-            List<BloodCapacity> bloodCapacityDonates = capacityRepository.findAllByDonorBloodTypeIdAndComponentIdAndCanDonate(bloodType, componentRepository.getReferenceById(1), true);
-            List<BloodCapacity> bloodCapacityReceives = capacityRepository.findAllByDonorBloodTypeIdAndComponentIdAndCanReceive(bloodType,componentRepository.getReferenceById(1), true);
-            bloodCapacityResponse.setBloodTypeName(getBloodTypeName(bloodType) );
-            bloodCapacityResponse.setDonorBloodTypeName(getListBloodType(bloodCapacityDonates));
-            bloodCapacityResponse.setReceivingBloodTypeName(getListBloodType(bloodCapacityReceives));
-            bloodCapacityResponses.add(bloodCapacityResponse);
-        }
-        return bloodCapacityResponses;
+            List<BloodCapacity> bloodCapacityDonates = capacityRepository.findAllByDonorBloodTypeIdAndComponentIdAndCanDonate(bloodType, componentRepository.findById(idBloodComponent), true);
+            List<BloodCapacity> bloodCapacityReceives = capacityRepository.findAllByDonorBloodTypeIdAndComponentIdAndCanReceive(bloodType,componentRepository.findById(idBloodComponent), true);
+            bloodCapacityResponse.setType(getBloodTypeName(bloodType) );
+            bloodCapacityResponse.setCanDonateTo(getListBloodType(bloodCapacityDonates));
+            bloodCapacityResponse.setCanReceiveFrom(getListBloodType(bloodCapacityReceives));
+        return bloodCapacityResponse;
+    }
+    @Override
+    public List<BloodComponents> getBloodComponents(){
+        return componentRepository.findAll();
     }
 
+    @Override
+    public List<BloodType> getBloodTypes(){
+        return typeRepository.findAll();
+    }
+
+    @Override
+    public BloodComponents getBloodComponentById(int id){
+        return componentRepository.findById(id);
+    }
 }

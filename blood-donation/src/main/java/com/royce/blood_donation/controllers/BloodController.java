@@ -1,5 +1,7 @@
 package com.royce.blood_donation.controllers;
 
+import com.royce.blood_donation.models.BloodComponents;
+import com.royce.blood_donation.models.enums.BloodComponent;
 import com.royce.blood_donation.responses.BloodCapacityResponse;
 import com.royce.blood_donation.responses.BloodTypeResponse;
 import com.royce.blood_donation.services.IBloodService;
@@ -22,10 +24,26 @@ public class BloodController {
         return new ResponseEntity<>(bloodTypeResponse, HttpStatus.OK);
     }
 
-    @GetMapping("/all-type")
-    public ResponseEntity<?> getAllBloodType() {
-        List<BloodCapacityResponse> bloodTypeResponse = bloodService.getAllBloodCapacity();
+    @GetMapping("/blood-types/{id}/components")
+    public ResponseEntity<?> getCapacityBlood(@PathVariable("id") int id, @RequestParam(required = false) int bloodComponentId) {
+        BloodCapacityResponse bloodTypeResponse = bloodService.getAllBloodCapacityByBloodTypeAndBloodComponent(id,bloodComponentId);
         return new ResponseEntity<>(bloodTypeResponse, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/blood-type/{id}")
+    public ResponseEntity<?> getBloodType(@PathVariable("id") int id){
+        return new ResponseEntity<>(bloodService.getBloodTypeById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/component/{id}")
+    public ResponseEntity<?> getAllComponent(@PathVariable("id") int id){
+        return new ResponseEntity<>( bloodService.getBloodComponentById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/component-type")
+    public ResponseEntity<?> getAllComponents(){
+        return new ResponseEntity<>(bloodService.getBloodComponents(), HttpStatus.OK);
     }
 
 }

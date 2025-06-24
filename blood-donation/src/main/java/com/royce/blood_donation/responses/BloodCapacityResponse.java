@@ -15,9 +15,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class BloodCapacityResponse {
-    private String bloodTypeName;
-    private List<String> donorBloodTypeName;
-    private List<String> receivingBloodTypeName;
+    private String type;
+    private List<String> canDonateTo;
+    private List<String> canReceiveFrom;
 
     public static List<String> getListBloodType(List<BloodCapacity> bloodCapacities) {
         List<String> donorBloodTypeName = new ArrayList<>();
