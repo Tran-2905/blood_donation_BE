@@ -18,7 +18,6 @@ public class MapperConfig {
                 .addMappings(m -> {
                     m.map(PostDTO::getDesignation, UserProfile::setDesignation);
                     m.map(PostDTO::getBio,         UserProfile::setBio);
-                    m.map(PostDTO::getAvatarUrl,   UserProfile::setAvatarUrl);
                 });
 
         // --- mapping từ PostDTO → Post ---
@@ -27,7 +26,6 @@ public class MapperConfig {
                     m.map(PostDTO::getTitle,    Post::setTitle);
                     m.map(PostDTO::getSummary,  Post::setSummary);
                     m.map(PostDTO::getContent,  Post::setContent);
-                    m.map(PostDTO::getImageUrl, Post::setImageUrl);
                 });
 
         return mapper;

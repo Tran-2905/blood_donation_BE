@@ -16,13 +16,8 @@ public class PostDTO {
     private String title;
     private String summary;
     private String content;
-    @JsonProperty("image_url")
-    private String imageUrl;
     @JsonProperty("author_name")
     private String authorName;
     private String designation;
     private String bio;
-    @JsonProperty("avatar_url")
-    private String avatarUrl;
-
 }
