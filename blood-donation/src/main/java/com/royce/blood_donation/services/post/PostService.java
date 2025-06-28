@@ -1,6 +1,5 @@
 package com.royce.blood_donation.services.post;
 
-import com.royce.blood_donation.configuration.MapperConfig;
 import com.royce.blood_donation.dtos.PostDTO;
 import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.enums.Status;
@@ -13,22 +12,14 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -43,14 +34,16 @@ public class PostService implements IPostService {
         User managedUser = userRepository.findById(user.getId())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
 
-
-        UserProfile userProfile = mapper.map(postDTO, UserProfile.class);
-        if(image_url!=null){
+        UserProfile userProfile = userProfileRepository.findByUserId(user.getId()).orElse(new UserProfile());
+        mapper.map(postDTO, userProfile);
+        if(avatar_url!=null){
             userProfile.setAvatarUrl(uploadImages(avatar_url));
         }
         userProfile.setUser(managedUser);
         userProfileRepository.save(userProfile);
-        Post post = mapper.map(postDTO, Post.class);
+
+        Post post = new Post();
+        mapper.map(postDTO, post);
         post.setAuthor(managedUser);
         post.setImageUrl(uploadImages(image_url));
         post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
