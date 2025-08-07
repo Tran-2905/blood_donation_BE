@@ -1,24 +1,36 @@
 package com.royce.blood_donation.models.blog;
 
+import com.royce.blood_donation.models.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name = "post_categories")
+import java.time.LocalDateTime;
+
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Data
+@Table(name = "categories")
 public class PostCategory {
-    @EmbeddedId
-    private PostCategoryId id;
-    @ManyToOne
-    @MapsId("postId")
-    @JoinColumn(name = "post_id", insertable = false, updatable = false)
-    private Post post;
-    @ManyToOne
-    @MapsId("categoryId")
-    @JoinColumn(name = "category_id", insertable = false, updatable = false)
-    private Category category;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
+    private int id;
+
+    @Column(name = "name", nullable = false, unique = true, length = 50)
+    private String name;
+
+    @Column(name = "slug", nullable = false, unique = true, length = 50)
+    private String slug;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = createdAt != null ? createdAt : LocalDateTime.now();
+    }
+
 }

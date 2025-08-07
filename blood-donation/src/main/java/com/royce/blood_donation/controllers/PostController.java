@@ -25,13 +25,14 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/posts")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class PostController {
     private final IPostService postService;
     @PostMapping(value="/add", consumes = MediaType.MULTIPART_FORM_DATA_VALUE )
     public ResponseEntity<?> addPost(@RequestPart("post") @Validated PostDTO postDTO,
                                      @RequestPart(value = "image_url", required = false) MultipartFile image_url,
-                                     @RequestPart(value = "avatar_file", required = false) MultipartFile avatar_url
+                                     @RequestPart(value = "avatar_url", required = false) MultipartFile avatar_url
                                     ,@AuthenticationPrincipal User user, BindingResult result) {
         if (result.hasErrors()) {
             return ResponseEntity.badRequest().body(result.getFieldErrors().toString());
@@ -39,5 +40,6 @@ public class PostController {
         postService.createPost(postDTO, image_url, avatar_url, user);
         return ResponseEntity.ok().build();
     }
+
 
 }

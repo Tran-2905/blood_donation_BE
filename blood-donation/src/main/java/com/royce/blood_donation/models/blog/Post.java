@@ -54,5 +54,7 @@ public class Post extends BaseEntity {
     @Column(name = "approved_at")
     private LocalDateTime approvedAt;
 
-
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private PostCategory category;
 }

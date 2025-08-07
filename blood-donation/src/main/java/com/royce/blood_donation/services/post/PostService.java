@@ -41,7 +41,6 @@ public class PostService implements IPostService {
         }
         userProfile.setUser(managedUser);
         userProfileRepository.save(userProfile);
-
         Post post = new Post();
         mapper.map(postDTO, post);
         post.setAuthor(managedUser);

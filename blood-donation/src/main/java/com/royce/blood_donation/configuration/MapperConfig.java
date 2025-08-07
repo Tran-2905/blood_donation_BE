@@ -1,6 +1,8 @@
 package com.royce.blood_donation.configuration;
 
+import com.royce.blood_donation.dtos.PostCategoryDTO;
 import com.royce.blood_donation.dtos.PostDTO;
+import com.royce.blood_donation.models.blog.PostCategory;
 import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.user.UserProfile;
 import org.modelmapper.ModelMapper;
@@ -19,16 +21,20 @@ public class MapperConfig {
                     m.map(PostDTO::getDesignation, UserProfile::setDesignation);
                     m.map(PostDTO::getBio,         UserProfile::setBio);
                 });
-
-        // --- mapping từ PostDTO → Post ---
         mapper.createTypeMap(PostDTO.class, Post.class)
                 .addMappings(m -> {
                     m.map(PostDTO::getTitle,    Post::setTitle);
                     m.map(PostDTO::getSummary,  Post::setSummary);
                     m.map(PostDTO::getContent,  Post::setContent);
                 });
-
+        mapper.createTypeMap(PostCategoryDTO.class, PostCategory.class)
+                .addMappings(m -> {
+                    m.map(PostCategoryDTO :: getName, PostCategory::setName);
+                    m.map(PostCategoryDTO :: getSlug, PostCategory::setSlug);
+                });
         return mapper;
+
+
     }
 
 }

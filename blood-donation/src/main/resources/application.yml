@@ -83,7 +83,7 @@ springdoc:
   path: /api-docs
 
 jwt:
- expiration: 2592000
+ expiration: 200
  secretKey: Xp_b5-tEAufHBk9CiQzd9XK1Vs8iLG8Nk-ohg2Jq2qM
 
 frontend:
