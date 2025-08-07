@@ -40,6 +40,13 @@ public class PostController {
         postService.createPost(postDTO, image_url, avatar_url, user);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getPostById(@PathVariable("id") long id){
+        return new ResponseEntity<>(postService.getPostById(id), HttpStatus.OK);
+    }
 
-
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllPosts(){
+        return new ResponseEntity<>(postService.getAllPosts(), HttpStatus.OK);
+    }
 }

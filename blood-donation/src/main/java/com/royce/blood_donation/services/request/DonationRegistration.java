@@ -35,7 +35,7 @@ public class DonationRegistration implements IDonationRegistration {
                 .notes(requestDonationDTO.getNotes())
                 .acceptGeneralTerm(requestDonationDTO.isAcceptGeneralTerm())
                 .acceptContactTerm(requestDonationDTO.isAcceptContactTerm())
-                .status(Status.Pending)
+                .status(Status.pending)
                 .build();
         donationRegistrationRepository.save(requestDonation);
     }

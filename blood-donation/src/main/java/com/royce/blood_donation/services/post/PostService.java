@@ -2,6 +2,7 @@ package com.royce.blood_donation.services.post;
 
 import com.royce.blood_donation.dtos.PostDTO;
 import com.royce.blood_donation.models.blog.Post;
+import com.royce.blood_donation.models.blog.PostCategory;
 import com.royce.blood_donation.models.enums.Status;
 import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.models.user.UserProfile;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -46,12 +48,22 @@ public class PostService implements IPostService {
         post.setAuthor(managedUser);
         post.setImageUrl(uploadImages(image_url));
         post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
-        post.setStatus(Status.Pending);
+        post.setStatus(Status.pending);
         postRepository.save(post);
     }
     @Override
     public Post getPostById(Long id){
         return postRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Post not found"));
+    }
+
+    @Override
+    public void deletePost(Long id) {
+        postRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Post> getAllPosts() {
+        return postRepository.findAllByOrderByIdDesc();
     }
 
     public String uploadImages( MultipartFile file ){
@@ -98,4 +110,6 @@ public class PostService implements IPostService {
         Files.copy(file.getInputStream(), destination, StandardCopyOption.REPLACE_EXISTING);
         return fileName;
     }
+
+
 }
