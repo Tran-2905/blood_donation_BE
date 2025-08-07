@@ -30,7 +30,6 @@ public class MapperConfig {
         mapper.createTypeMap(PostCategoryDTO.class, PostCategory.class)
                 .addMappings(m -> {
                     m.map(PostCategoryDTO :: getName, PostCategory::setName);
-                    m.map(PostCategoryDTO :: getSlug, PostCategory::setSlug);
                 });
         return mapper;
 
