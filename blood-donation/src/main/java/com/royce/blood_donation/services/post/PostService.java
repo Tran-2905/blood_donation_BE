@@ -9,6 +9,7 @@ import com.royce.blood_donation.models.user.UserProfile;
 import com.royce.blood_donation.repositories.IPostRepository;
 import com.royce.blood_donation.repositories.IUserProfileRepository;
 import com.royce.blood_donation.repositories.IUserRepository;
+import com.royce.blood_donation.responses.PostResponse;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -62,8 +63,8 @@ public class PostService implements IPostService {
     }
 
     @Override
-    public List<Post> getAllPosts() {
-        return postRepository.findAllByOrderByIdDesc();
+    public List<PostResponse> getAllPosts() {
+        return postRepository.findAllPostsWithAuthorAndCategory();
     }
 
     public String uploadImages( MultipartFile file ){

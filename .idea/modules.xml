@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/blood-donation/blood-donation.iml" filepath="$PROJECT_DIR$/blood-donation/blood-donation.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/blood_donation_BE.iml" filepath="$PROJECT_DIR$/.idea/blood_donation_BE.iml" />
     </modules>
   </component>
