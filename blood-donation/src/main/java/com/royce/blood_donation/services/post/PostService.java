@@ -53,8 +53,8 @@ public class PostService implements IPostService {
         postRepository.save(post);
     }
     @Override
-    public Post getPostById(Long id){
-        return postRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Post not found"));
+    public PostResponse getPostById(Long id){
+        return postRepository.findAllPostsById(id);
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface IPostService {
     public void createPost(PostDTO postDTO, MultipartFile image_url, MultipartFile avatar_url, User user);
-    public Post getPostById(Long id);
+    public PostResponse getPostById(Long id);
     public void deletePost(Long id);
     public List<PostResponse> getAllPosts();
 }

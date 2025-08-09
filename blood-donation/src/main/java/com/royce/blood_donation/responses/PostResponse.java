@@ -22,12 +22,14 @@ public class PostResponse {
     @JsonProperty("image_url")
     private String imageUrl;
     private String summary;
-    public PostResponse(Long id, String title, String authorName, LocalDateTime approvedAt, String imageUrl, String summary) {
+    private String content;
+    public PostResponse(Long id, String title, String authorName, LocalDateTime approvedAt, String imageUrl, String summary, String content) {
         this.id = id;
         this.title = title;
         this.authorName = authorName;
         this.approvedAt = approvedAt;
         this.imageUrl = imageUrl;
         this.summary = summary;
+        this.content = content;
     }
 }

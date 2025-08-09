@@ -5,6 +5,7 @@ import com.royce.blood_donation.dtos.PostDTO;
 import com.royce.blood_donation.models.blog.PostCategory;
 import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.user.UserProfile;
+import com.royce.blood_donation.responses.PostResponse;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
