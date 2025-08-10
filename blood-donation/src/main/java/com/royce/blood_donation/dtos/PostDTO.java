@@ -20,4 +20,6 @@ public class PostDTO {
     private String authorName;
     private String designation;
     private String bio;
+    @JsonProperty("category_id")
+    private int categoryId;
 }
