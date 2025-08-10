@@ -32,7 +32,6 @@ public class PostService implements IPostService {
     private final IUserProfileRepository userProfileRepository;
     private final IUserRepository userRepository;
     private final ModelMapper mapper;
-    private final IPostCategoryService postCategoryService;
     @Transactional
     public void createPost(PostDTO postDTO,MultipartFile image_url, MultipartFile avatar_url, User user){
         User managedUser = userRepository.findById(user.getId())
@@ -47,7 +46,6 @@ public class PostService implements IPostService {
         userProfileRepository.save(userProfile);
         Post post = new Post();
         mapper.map(postDTO, post);
-        post.setCategory(postCategoryService.getPostCategoryById(postDTO.getCategoryId()));
         post.setAuthor(managedUser);
         post.setImageUrl(uploadImages(image_url));
         post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
