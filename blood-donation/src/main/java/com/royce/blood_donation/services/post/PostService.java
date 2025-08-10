@@ -32,29 +32,43 @@ public class PostService implements IPostService {
     private final IUserProfileRepository userProfileRepository;
     private final IUserRepository userRepository;
     private final ModelMapper mapper;
+    private final IPostCategoryService postCategoryService;
     @Transactional
     public void createPost(PostDTO postDTO,MultipartFile image_url, MultipartFile avatar_url, User user){
-        User managedUser = userRepository.findById(user.getId())
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        try {
 
-        UserProfile userProfile = userProfileRepository.findByUserId(user.getId()).orElse(new UserProfile());
-        mapper.map(postDTO, userProfile);
-        if(avatar_url!=null){
-            userProfile.setAvatarUrl(uploadImages(avatar_url));
+            User managedUser = userRepository.findById(user.getId())
+                    .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+            UserProfile userProfile = userProfileRepository.findByUserId(user.getId()).orElse(new UserProfile());
+            mapper.map(postDTO, userProfile);
+            if (avatar_url != null) {
+                userProfile.setAvatarUrl(avatar_url.getBytes());
+            }
+            userProfile.setUser(managedUser);
+            userProfileRepository.save(userProfile);
+            Post post = new Post();
+            mapper.map(postDTO, post);
+            post.setCategory(postCategoryService.getPostCategoryById(postDTO.getCategoryId()));
+            post.setAuthor(managedUser);
+            post.setImageUrl(image_url.getBytes());
+            post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
+            post.setStatus(Status.pending);
+            postRepository.save(post);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            throw new EntityNotFoundException("User not found");
         }
-        userProfile.setUser(managedUser);
-        userProfileRepository.save(userProfile);
-        Post post = new Post();
-        mapper.map(postDTO, post);
-        post.setAuthor(managedUser);
-        post.setImageUrl(uploadImages(image_url));
-        post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
-        post.setStatus(Status.pending);
-        postRepository.save(post);
     }
     @Override
     public PostResponse getPostById(Long id){
         return postRepository.findAllPostsById(id);
+    }
+
+    @Override
+    public byte[] getPostImage(Long id) {
+        Post post = postRepository.findById(id).orElseThrow();
+        return post.getImageUrl(); // Trường kiểu byte[], map với MEDIUMBLOB DB
     }
 
     @Override

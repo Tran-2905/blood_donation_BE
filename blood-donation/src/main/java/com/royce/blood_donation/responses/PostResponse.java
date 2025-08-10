@@ -20,10 +20,10 @@ public class PostResponse {
     @JsonProperty("approved_at")
     private LocalDateTime approvedAt;
     @JsonProperty("image_url")
-    private String imageUrl;
+    private byte[] imageUrl;
     private String summary;
     private String content;
-    public PostResponse(Long id, String title, String authorName, LocalDateTime approvedAt, String imageUrl, String summary, String content) {
+    public PostResponse(Long id, String title, String authorName, LocalDateTime approvedAt, byte[] imageUrl, String summary, String content) {
         this.id = id;
         this.title = title;
         this.authorName = authorName;

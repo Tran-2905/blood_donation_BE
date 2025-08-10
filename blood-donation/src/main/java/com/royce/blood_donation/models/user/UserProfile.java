@@ -23,6 +23,7 @@ public class UserProfile {
     @Column(name = "bio", columnDefinition = "TEXT")
     private String bio;
 
-    @Column(name = "avatar_url", length = 255)
-    private String avatarUrl;
+    @Lob
+    @Column(name = "avatar_url")
+    private byte[] avatarUrl;
 }

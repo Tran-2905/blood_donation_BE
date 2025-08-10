@@ -33,8 +33,9 @@ public class Post extends BaseEntity {
     @Column(name = "content", nullable = false, columnDefinition = "MEDIUMTEXT")
     private String content;
 
-    @Column(name = "image_url", length = 255)
-    private String imageUrl;
+    @Lob
+    @Column(name = "image_url")
+    private byte[] imageUrl;
 
     @Column(name = "published_at")
     private LocalDate publishedAt;

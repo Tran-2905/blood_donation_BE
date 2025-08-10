@@ -5,6 +5,7 @@ import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.services.post.IPostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,19 @@ public class PostController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getPostById(@PathVariable("id") long id){
         return new ResponseEntity<>(postService.getPostById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/image")
+    public ResponseEntity<byte[]> getPostImage(@PathVariable Long id) {
+        byte[] img = postService.getPostImage(id);
+
+        // Nếu bài viết chưa có ảnh, return 404 hoặc trả về ảnh mặc định
+        if (img == null || img.length == 0) {
+            return ResponseEntity.notFound().build();
+        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_JPEG); // hoặc IMAGE_PNG nếu loại ảnh là png
+        return new ResponseEntity<>(img, headers, HttpStatus.OK);
     }
 
     @GetMapping("/all")

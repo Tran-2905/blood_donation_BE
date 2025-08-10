@@ -14,4 +14,5 @@ public interface IPostService {
     public PostResponse getPostById(Long id);
     public void deletePost(Long id);
     public List<PostResponse> getAllPosts();
+    public byte[] getPostImage(Long id);
 }
