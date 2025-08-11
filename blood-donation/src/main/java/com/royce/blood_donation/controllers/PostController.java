@@ -49,13 +49,11 @@ public class PostController {
     @GetMapping("/{id}/image")
     public ResponseEntity<byte[]> getPostImage(@PathVariable Long id) {
         byte[] img = postService.getPostImage(id);
-
-        // Nếu bài viết chưa có ảnh, return 404 hoặc trả về ảnh mặc định
         if (img == null || img.length == 0) {
             return ResponseEntity.notFound().build();
         }
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_JPEG); // hoặc IMAGE_PNG nếu loại ảnh là png
+        headers.setContentType(MediaType.IMAGE_JPEG);
         return new ResponseEntity<>(img, headers, HttpStatus.OK);
     }
 

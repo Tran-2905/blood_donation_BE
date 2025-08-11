@@ -77,6 +77,9 @@ servlet:
 
 api:
  prefix: api/v1
+ key: AIzaSyCbgFIQMjn5K8UUer0QD5N26GFKi1XDwoY
+
+
 
 springdoc:
  api-docs:
