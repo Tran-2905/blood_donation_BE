@@ -4,6 +4,7 @@ import com.royce.blood_donation.responses.BloodCapacityResponse;
 import com.royce.blood_donation.responses.BloodTypeResponse;
 import com.royce.blood_donation.services.blood.IBloodService;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

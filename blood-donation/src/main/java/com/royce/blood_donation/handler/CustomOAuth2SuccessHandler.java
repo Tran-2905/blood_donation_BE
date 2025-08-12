@@ -3,7 +3,7 @@ package com.royce.blood_donation.handler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.services.jwt.JWTService;
-import com.royce.blood_donation.services.user.UserService;
+import com.royce.blood_donation.services.auth.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Component
 public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler {
-    private final UserService userService;
+    private final AuthService userService;
     private final JWTService jwtService;
     private final ObjectMapper objectMapper;
 

@@ -2,7 +2,6 @@ package com.royce.blood_donation.controllers;
 
 import com.royce.blood_donation.services.distance.IDistanceService;
 import com.royce.blood_donation.services.geocode.IGeocodingService;
-import com.royce.blood_donation.services.user.IUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

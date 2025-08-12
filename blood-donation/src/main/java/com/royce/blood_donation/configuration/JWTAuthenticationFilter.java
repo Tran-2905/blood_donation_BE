@@ -3,7 +3,7 @@ package com.royce.blood_donation.configuration;
 import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.repositories.IUserRepository;
 import com.royce.blood_donation.services.jwt.IJWTService;
-import com.royce.blood_donation.services.user.IUserService;
+import com.royce.blood_donation.services.auth.IAuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +21,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
     private final IJWTService jwtService;
-    private final IUserService userService;
+    private final IAuthService userService;
     private final IUserRepository userRepository;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

@@ -3,7 +3,7 @@ package com.royce.blood_donation.controllers;
 import com.royce.blood_donation.dtos.UserLoginDTO;
 import com.royce.blood_donation.dtos.UserDTO;
 import com.royce.blood_donation.services.jwt.IJWTService;
-import com.royce.blood_donation.services.user.IUserService;
+import com.royce.blood_donation.services.auth.IAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/v1/user")
 public class UserController {
-    private final IUserService userService;
+    private final IAuthService userService;
     private final IJWTService jwtService;
 
     @PostMapping("/register")
