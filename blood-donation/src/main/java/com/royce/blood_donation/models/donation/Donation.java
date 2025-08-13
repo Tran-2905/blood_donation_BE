@@ -21,7 +21,7 @@ import java.util.Date;
 public class Donation extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "blood_type_id")
+    @Column(name = "donation_id")
     private int donationId;
     @ManyToOne
     @JoinColumn(name = "donor_user_id", referencedColumnName = "user_id")

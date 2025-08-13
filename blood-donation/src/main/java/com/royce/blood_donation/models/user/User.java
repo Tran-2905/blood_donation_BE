@@ -29,8 +29,6 @@ public class User extends BaseEntity implements UserDetails {
         );
     }
 
-
-
     @Override
     public String getPassword() {
         return passwordHash;
@@ -85,7 +83,7 @@ public class User extends BaseEntity implements UserDetails {
     private String passwordHash;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role", unique = true, nullable = false)
+    @Column(name = "role", nullable = false)
     private Role role;
 
     @Column(name = "country")
@@ -97,7 +95,7 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "address")
     private String address;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "blood_type_id")
     private BloodType bloodTypeId;
 

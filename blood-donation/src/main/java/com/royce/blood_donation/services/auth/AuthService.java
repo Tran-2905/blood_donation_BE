@@ -7,6 +7,7 @@ import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.models.enums.Role;
 import com.royce.blood_donation.repositories.IUserRepository;
 import com.royce.blood_donation.responses.AuthenticationResponse;
+import com.royce.blood_donation.services.blood.IBloodService;
 import com.royce.blood_donation.services.jwt.JWTService;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,7 +23,7 @@ import java.util.HashMap;
 public class AuthService implements IAuthService {
     private final IUserRepository userRepository;
     private final JWTService jwtService;
-
+    private final IBloodService bloodService;
 
     private PasswordEncoder passwordEncoder (){
         return new BCryptPasswordEncoder();
@@ -38,6 +39,7 @@ public class AuthService implements IAuthService {
         if(userDTO.getFacebookAccountId()==null || userDTO.getGoogleAccountId()==null){
             userDTO.setPassword(passwordEncoder().encode(userDTO.getPassword()));
         }
+
          User user = User.builder()
                 .phoneNumber(userDTO.getPhoneNumber())
                 .email(userDTO.getEmail())
@@ -48,7 +50,7 @@ public class AuthService implements IAuthService {
                 .country(userDTO.getCountry())
                 .city(userDTO.getCity())
                 .address(userDTO.getAddress())
-                .bloodTypeId(userDTO.getBloodType())
+                .bloodTypeId(bloodService.getBloodTypeById(userDTO.getBloodType()))
                 .facebookAccount(userDTO.getFacebookAccountId())
                 .googleAccount(userDTO.getGoogleAccountId())
                 .dateOfBirth(userDTO.getDateOfBirth())
@@ -94,7 +96,7 @@ public class AuthService implements IAuthService {
                     newUser.setFirstName(firstName);
                     newUser.setLastName(lastName);
                     newUser.setRole(Role.User);
-                    newUser.setBloodTypeId(10);
+//                    newUser.setBloodTypeId(10);
                     return newUser;
                 });
         user.setGoogleAccount(googleId);

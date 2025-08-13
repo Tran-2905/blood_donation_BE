@@ -1,5 +1,6 @@
 package com.royce.blood_donation.responses;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ public class UserProfileResponse {
     private Date lastDonation;
     private LocalDateTime memberSince;
     private String phoneNumber;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
     private String address;
     private String condition;

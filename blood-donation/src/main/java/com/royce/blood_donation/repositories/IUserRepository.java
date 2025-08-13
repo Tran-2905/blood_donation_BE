@@ -12,11 +12,17 @@ import java.util.Optional;
 
 public interface IUserRepository extends JpaRepository<User, Long> {
     boolean existsByPhoneNumber(String phoneNumber);
-    Optional <User> findByPhoneNumber(String phoneNumber);
+
+    Optional<User> findByPhoneNumber(String phoneNumber);
+
     User findUserById(Long id);
+
     Optional<User> findByGoogleAccount(String googleAccount);
+
     Optional<User> findByEmail(String email);
+
     boolean existsByEmail(String email);
+
     User getUsersByEmail(String email);
 
     @Query("SELECT u FROM User u WHERE u.id = :id")
@@ -24,19 +30,18 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
     @Query("""
     SELECT new com.royce.blood_donation.responses.UserProfileResponse(
-        CONCAT(u.lastName, ' ', u.firstName),
+        CONCAT(COALESCE(u.lastName, ''), ' ', COALESCE(u.firstName, '')),
         u.email,
         CONCAT(b.type, ' ', b.rh),
-        d.donationDate,
+        (SELECT MAX(d.donationDate) FROM Donation d WHERE d.donorUserId.id = u.id),
         u.createdAt,
         u.phoneNumber,
         u.dateOfBirth,
         u.address
     )
-    FROM Donation d
-    JOIN d.donorUserId u
-    JOIN u.bloodTypeId b
-    WHERE d.status = 'COMPLETED'
+    FROM User u
+    LEFT JOIN u.bloodTypeId b
+    WHERE u.id = :id
 """)
-    List<UserProfileResponse> findAllUsers();
+    UserProfileResponse findUserWithLatestDonation(@Param("id") Long id);
 }

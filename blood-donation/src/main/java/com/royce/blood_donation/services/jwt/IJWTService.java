@@ -12,4 +12,5 @@ public interface IJWTService {
     boolean isTokenExpired(String token);
     boolean validateToken(String token, UserDetails userDetails);
     public String generateRefreshToken(Map<String, Objects> extractClaims, User userDetails);
+    public Long extractUserId(String token);
 }

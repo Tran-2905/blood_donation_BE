@@ -79,4 +79,18 @@ public class JWTService implements IJWTService {
     public boolean isTokenExpired(String token) {
         return extractClaim(token, Claims :: getExpiration).before(new Date());
     }
+    public Long extractUserId(String token) {
+        Claims claims = extractAllClaim(token);
+        Object userIdObj = claims.get("userId");
+        if (userIdObj instanceof Integer) {
+            return Long.valueOf((Integer) userIdObj);
+        }
+        if (userIdObj instanceof Long) {
+            return (Long) userIdObj;
+        }
+        if (userIdObj instanceof String) {
+            return Long.parseLong((String) userIdObj);
+        }
+        throw new RuntimeException("Invalid userId type in token");
+    }
 }
