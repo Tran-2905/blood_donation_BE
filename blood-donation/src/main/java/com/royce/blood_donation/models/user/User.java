@@ -1,6 +1,7 @@
 package com.royce.blood_donation.models.user;
 
 import com.royce.blood_donation.models.BaseEntity;
+import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.models.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -96,8 +97,9 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "blood_type_id")
-    private int bloodTypeId;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @JoinColumn(name = "blood_type_id")
+    private BloodType bloodTypeId;
 
     @Column(name = "google_account")
     private String googleAccount;

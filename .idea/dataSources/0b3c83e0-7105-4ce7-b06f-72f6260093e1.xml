@@ -93,7 +93,45 @@
 |root||root|localhost|UPDATE|G
 |root||root|127.0.0.1|grant option|G
 |root||root|::1|grant option|G
-|root||root|localhost|grant option|G</Grants>
+|root||root|localhost|grant option|G
+phpmyadmin|schema||pma|localhost|DELETE|G
+phpmyadmin|schema||pma|localhost|INSERT|G
+phpmyadmin|schema||pma|localhost|SELECT|G
+phpmyadmin|schema||pma|localhost|UPDATE|G
+test|schema||&apos;&apos;||ALTER|G
+test|schema||&apos;&apos;||CREATE|G
+test|schema||&apos;&apos;||CREATE ROUTINE|G
+test|schema||&apos;&apos;||CREATE TEMPORARY TABLES|G
+test|schema||&apos;&apos;||CREATE VIEW|G
+test|schema||&apos;&apos;||DELETE|G
+test|schema||&apos;&apos;||DELETE HISTORY|G
+test|schema||&apos;&apos;||DROP|G
+test|schema||&apos;&apos;||EVENT|G
+test|schema||&apos;&apos;||INDEX|G
+test|schema||&apos;&apos;||INSERT|G
+test|schema||&apos;&apos;||LOCK TABLES|G
+test|schema||&apos;&apos;||REFERENCES|G
+test|schema||&apos;&apos;||SELECT|G
+test|schema||&apos;&apos;||SHOW VIEW|G
+test|schema||&apos;&apos;||TRIGGER|G
+test|schema||&apos;&apos;||UPDATE|G
+test\\_%|schema||&apos;&apos;||ALTER|G
+test\\_%|schema||&apos;&apos;||CREATE|G
+test\\_%|schema||&apos;&apos;||CREATE ROUTINE|G
+test\\_%|schema||&apos;&apos;||CREATE TEMPORARY TABLES|G
+test\\_%|schema||&apos;&apos;||CREATE VIEW|G
+test\\_%|schema||&apos;&apos;||DELETE|G
+test\\_%|schema||&apos;&apos;||DELETE HISTORY|G
+test\\_%|schema||&apos;&apos;||DROP|G
+test\\_%|schema||&apos;&apos;||EVENT|G
+test\\_%|schema||&apos;&apos;||INDEX|G
+test\\_%|schema||&apos;&apos;||INSERT|G
+test\\_%|schema||&apos;&apos;||LOCK TABLES|G
+test\\_%|schema||&apos;&apos;||REFERENCES|G
+test\\_%|schema||&apos;&apos;||SELECT|G
+test\\_%|schema||&apos;&apos;||SHOW VIEW|G
+test\\_%|schema||&apos;&apos;||TRIGGER|G
+test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <ServerVersion>10.4.32</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
@@ -1106,7 +1144,7 @@
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Current>1</Current>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-08-06.14:22:09</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-08-13.06:51:38</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="information_schema">
@@ -1170,79 +1208,99 @@
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="342" parent="324" name="featured_posts">
+    <table id="342" parent="324" name="donations">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="343" parent="324" name="posts">
+    <table id="343" parent="324" name="emergency_requests">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="344" parent="324" name="user_profiles">
+    <table id="344" parent="324" name="featured_posts">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="345" parent="324" name="users">
+    <table id="345" parent="324" name="posts">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="346" parent="337" name="donor_blood_type_id">
+    <table id="346" parent="324" name="request_blood">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="347" parent="324" name="request_process">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="348" parent="324" name="user_profiles">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="349" parent="324" name="users">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="350" parent="337" name="donor_blood_type_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="347" parent="337" name="rh">
+    <column id="351" parent="337" name="rh">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>enum(&apos;Positive&apos;, &apos;Negative&apos;)|0e</StoredType>
     </column>
-    <column id="348" parent="337" name="recipient_blood_type_id">
+    <column id="352" parent="337" name="recipient_blood_type_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="349" parent="337" name="recipient_rh">
+    <column id="353" parent="337" name="recipient_rh">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>enum(&apos;Positive&apos;, &apos;Negative&apos;)|0e</StoredType>
     </column>
-    <column id="350" parent="337" name="component_id">
+    <column id="354" parent="337" name="component_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="351" parent="337" name="can_donate">
+    <column id="355" parent="337" name="can_donate">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="352" parent="337" name="can_receive">
+    <column id="356" parent="337" name="can_receive">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <foreign-key id="353" parent="337" name="blood_capacity_ibfk_1">
+    <foreign-key id="357" parent="337" name="blood_capacity_ibfk_1">
       <ColNames>donor_blood_type_id</ColNames>
       <RefColNames>blood_type_id</RefColNames>
       <RefTableName>blood_types</RefTableName>
     </foreign-key>
-    <foreign-key id="354" parent="337" name="blood_capacity_ibfk_2">
+    <foreign-key id="358" parent="337" name="blood_capacity_ibfk_2">
       <ColNames>recipient_blood_type_id</ColNames>
       <RefColNames>blood_type_id</RefColNames>
       <RefTableName>blood_types</RefTableName>
     </foreign-key>
-    <foreign-key id="355" parent="337" name="blood_capacity_ibfk_3">
+    <foreign-key id="359" parent="337" name="blood_capacity_ibfk_3">
       <ColNames>component_id</ColNames>
       <RefColNames>component_id</RefColNames>
       <RefTableName>blood_components</RefTableName>
     </foreign-key>
-    <index id="356" parent="337" name="PRIMARY">
+    <index id="360" parent="337" name="PRIMARY">
       <ColNames>donor_blood_type_id
 rh
 recipient_blood_type_id
@@ -1251,531 +1309,899 @@ component_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="337" name="recipient_blood_type_id">
+    <index id="361" parent="337" name="recipient_blood_type_id">
       <ColNames>recipient_blood_type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="358" parent="337" name="component_id">
+    <index id="362" parent="337" name="component_id">
       <ColNames>component_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="359" parent="337" name="PRIMARY">
+    <key id="363" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="360" parent="338" name="component_id">
+    <column id="364" parent="338" name="component_id">
       <AutoIncrement>5</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="361" parent="338" name="component_name">
+    <column id="365" parent="338" name="component_name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>enum(&apos;Whole Blood&apos;, &apos;Red Blood Cells&apos;, &apos;Plasma&apos;, &apos;Platelet&apos;)|0e</StoredType>
     </column>
-    <column id="362" parent="338" name="description">
+    <column id="366" parent="338" name="description">
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="363" parent="338" name="PRIMARY">
+    <index id="367" parent="338" name="PRIMARY">
       <ColNames>component_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="364" parent="338" name="component_name">
+    <index id="368" parent="338" name="component_name">
       <ColNames>component_name</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="365" parent="338" name="PRIMARY">
+    <key id="369" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="366" parent="338" name="component_name">
+    <key id="370" parent="338" name="component_name">
       <UnderlyingIndexName>component_name</UnderlyingIndexName>
     </key>
-    <column id="367" parent="339" name="blood_type_id">
+    <column id="371" parent="339" name="blood_type_id">
       <AutoIncrement>11</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="368" parent="339" name="type">
+    <column id="372" parent="339" name="type">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="369" parent="339" name="rh">
+    <column id="373" parent="339" name="rh">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>enum(&apos;Positive&apos;, &apos;Negative&apos;)|0e</StoredType>
     </column>
-    <column id="370" parent="339" name="description">
+    <column id="374" parent="339" name="description">
       <Position>4</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <index id="371" parent="339" name="PRIMARY">
+    <index id="375" parent="339" name="PRIMARY">
       <ColNames>blood_type_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="372" parent="339" name="PRIMARY">
+    <key id="376" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="373" parent="340" name="category_id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="377" parent="340" name="category_id">
+      <AutoIncrement>9</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="374" parent="340" name="name">
+    <column id="378" parent="340" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="375" parent="340" name="slug">
+    <column id="379" parent="340" name="slug">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="376" parent="340" name="created_at">
+    <column id="380" parent="340" name="created_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <index id="377" parent="340" name="PRIMARY">
+    <index id="381" parent="340" name="PRIMARY">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="378" parent="340" name="name">
+    <index id="382" parent="340" name="name">
       <ColNames>name</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="379" parent="340" name="slug">
+    <index id="383" parent="340" name="slug">
       <ColNames>slug</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="380" parent="340" name="PRIMARY">
+    <key id="384" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="381" parent="340" name="name">
+    <key id="385" parent="340" name="name">
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <key id="382" parent="340" name="slug">
+    <key id="386" parent="340" name="slug">
       <UnderlyingIndexName>slug</UnderlyingIndexName>
     </key>
-    <column id="383" parent="341" name="registration_id">
-      <AutoIncrement>8</AutoIncrement>
+    <column id="387" parent="341" name="registration_id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>bigint(20)|0s</StoredType>
     </column>
-    <column id="384" parent="341" name="user_id">
+    <column id="388" parent="341" name="user_id">
       <Position>2</Position>
       <StoredType>bigint(20)|0s</StoredType>
     </column>
-    <column id="385" parent="341" name="full_name">
+    <column id="389" parent="341" name="full_name">
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="386" parent="341" name="phone_number">
+    <column id="390" parent="341" name="phone_number">
       <Position>4</Position>
       <StoredType>varchar(15)|0s</StoredType>
     </column>
-    <column id="387" parent="341" name="email">
+    <column id="391" parent="341" name="email">
       <Position>5</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="388" parent="341" name="date_of_birth">
+    <column id="392" parent="341" name="date_of_birth">
       <Position>6</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="389" parent="341" name="gender">
+    <column id="393" parent="341" name="gender">
       <Position>7</Position>
       <StoredType>enum(&apos;Female&apos;, &apos;Male&apos;)|0e</StoredType>
     </column>
-    <column id="390" parent="341" name="blood_type_id">
+    <column id="394" parent="341" name="blood_type_id">
       <Position>8</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="391" parent="341" name="weight">
+    <column id="395" parent="341" name="weight">
       <Position>9</Position>
       <StoredType>float|0s</StoredType>
     </column>
-    <column id="392" parent="341" name="height">
+    <column id="396" parent="341" name="height">
       <Position>10</Position>
       <StoredType>float|0s</StoredType>
     </column>
-    <column id="393" parent="341" name="last_donation">
+    <column id="397" parent="341" name="last_donation">
       <Position>11</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="394" parent="341" name="available_date">
+    <column id="398" parent="341" name="available_date">
       <Position>12</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="395" parent="341" name="available_time">
+    <column id="399" parent="341" name="available_time">
       <Position>13</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="396" parent="341" name="notes">
+    <column id="400" parent="341" name="notes">
       <Position>14</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="397" parent="341" name="accept_general_term">
+    <column id="401" parent="341" name="accept_general_term">
       <DefaultExpression>0</DefaultExpression>
       <Position>15</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="398" parent="341" name="accept_contact_term">
+    <column id="402" parent="341" name="accept_contact_term">
       <Position>16</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="399" parent="341" name="status">
+    <column id="403" parent="341" name="status">
       <DefaultExpression>&apos;Pending&apos;</DefaultExpression>
       <Position>17</Position>
       <StoredType>enum(&apos;Pending&apos;, &apos;Confirmed&apos;, &apos;Cancelled&apos;)|0e</StoredType>
     </column>
-    <column id="400" parent="341" name="created_at">
+    <column id="404" parent="341" name="created_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <Position>18</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="401" parent="341" name="updated_at">
+    <column id="405" parent="341" name="updated_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>19</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <foreign-key id="402" parent="341" name="donation_registrations_ibfk_1">
+    <foreign-key id="406" parent="341" name="donation_registrations_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="403" parent="341" name="donation_registrations_ibfk_2">
+    <foreign-key id="407" parent="341" name="donation_registrations_ibfk_2">
       <ColNames>blood_type_id</ColNames>
       <RefColNames>blood_type_id</RefColNames>
       <RefTableName>blood_types</RefTableName>
     </foreign-key>
-    <index id="404" parent="341" name="PRIMARY">
+    <index id="408" parent="341" name="PRIMARY">
       <ColNames>registration_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="405" parent="341" name="user_id">
+    <index id="409" parent="341" name="user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="406" parent="341" name="blood_type_id">
+    <index id="410" parent="341" name="blood_type_id">
       <ColNames>blood_type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="407" parent="341" name="PRIMARY">
+    <key id="411" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="408" parent="342" name="post_id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="409" parent="342" name="priority">
-      <DefaultExpression>0</DefaultExpression>
-      <Position>2</Position>
-      <StoredType>smallint(6)|0s</StoredType>
-    </column>
-    <column id="410" parent="342" name="added_at">
-      <DefaultExpression>current_timestamp()</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <foreign-key id="411" parent="342" name="featured_posts_ibfk_1">
-      <ColNames>post_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>post_id</RefColNames>
-      <RefTableName>posts</RefTableName>
-    </foreign-key>
-    <index id="412" parent="342" name="PRIMARY">
-      <ColNames>post_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="413" parent="342" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="414" parent="343" name="post_id">
+    <column id="412" parent="342" name="donation_id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="415" parent="343" name="title">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="416" parent="343" name="slug">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="417" parent="343" name="summary">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StoredType>text|0s</StoredType>
-    </column>
-    <column id="418" parent="343" name="content">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>mediumtext|0s</StoredType>
-    </column>
-    <column id="419" parent="343" name="image_url">
-      <Position>6</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="420" parent="343" name="published_at">
-      <Position>7</Position>
-      <StoredType>date|0s</StoredType>
-    </column>
-    <column id="421" parent="343" name="author_id">
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="422" parent="343" name="status">
-      <DefaultExpression>&apos;pending&apos;</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>9</Position>
-      <StoredType>enum(&apos;pending&apos;, &apos;approved&apos;, &apos;rejected&apos;)|0e</StoredType>
-    </column>
-    <column id="423" parent="343" name="category_id">
-      <NotNull>1</NotNull>
-      <Position>10</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="424" parent="343" name="approved_by">
-      <Position>11</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="425" parent="343" name="approved_at">
-      <Position>12</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="426" parent="343" name="created_at">
-      <DefaultExpression>current_timestamp()</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>13</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="427" parent="343" name="updated_at">
-      <DefaultExpression>current_timestamp()</DefaultExpression>
-      <NotNull>1</NotNull>
-      <OnUpdate>current_timestamp()</OnUpdate>
-      <Position>14</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <foreign-key id="428" parent="343" name="posts_ibfk_2">
-      <ColNames>author_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>user_id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="429" parent="343" name="posts_ibfk_1">
-      <ColNames>category_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>post_id</RefColNames>
-      <RefTableName>posts</RefTableName>
-    </foreign-key>
-    <foreign-key id="430" parent="343" name="posts_ibfk_3">
-      <ColNames>approved_by</ColNames>
-      <OnDelete>set-null</OnDelete>
-      <RefColNames>user_id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="431" parent="343" name="PRIMARY">
-      <ColNames>post_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="432" parent="343" name="slug">
-      <ColNames>slug</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="433" parent="343" name="author_id">
-      <ColNames>author_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="434" parent="343" name="category_id">
-      <ColNames>category_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="435" parent="343" name="approved_by">
-      <ColNames>approved_by</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="436" parent="343" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="437" parent="343" name="slug">
-      <UnderlyingIndexName>slug</UnderlyingIndexName>
-    </key>
-    <column id="438" parent="344" name="user_id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="439" parent="344" name="designation">
-      <Position>2</Position>
-      <StoredType>varchar(100)|0s</StoredType>
-    </column>
-    <column id="440" parent="344" name="bio">
-      <Position>3</Position>
-      <StoredType>text|0s</StoredType>
-    </column>
-    <column id="441" parent="344" name="avatar_url">
-      <Position>4</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <foreign-key id="442" parent="344" name="user_profiles_ibfk_1">
-      <ColNames>user_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>user_id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="443" parent="344" name="PRIMARY">
-      <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="444" parent="344" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="445" parent="345" name="user_id">
-      <AutoIncrement>13</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>bigint(20)|0s</StoredType>
-    </column>
-    <column id="446" parent="345" name="first_name">
-      <Position>2</Position>
-      <StoredType>varchar(25)|0s</StoredType>
-    </column>
-    <column id="447" parent="345" name="last_name">
-      <Position>3</Position>
-      <StoredType>varchar(25)|0s</StoredType>
-    </column>
-    <column id="448" parent="345" name="date_of_birth">
-      <Position>4</Position>
-      <StoredType>datetime|0s</StoredType>
-    </column>
-    <column id="449" parent="345" name="gender">
-      <Position>5</Position>
-      <StoredType>enum(&apos;Female&apos;, &apos;Male&apos;)|0e</StoredType>
-    </column>
-    <column id="450" parent="345" name="email">
-      <Position>6</Position>
-      <StoredType>varchar(100)|0s</StoredType>
-    </column>
-    <column id="451" parent="345" name="phone_number">
-      <Position>7</Position>
-      <StoredType>varchar(15)|0s</StoredType>
-    </column>
-    <column id="452" parent="345" name="password_hash">
-      <Position>8</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="453" parent="345" name="role">
-      <Position>9</Position>
-      <StoredType>enum(&apos;User&apos;, &apos;Staff&apos;, &apos;Admin&apos;)|0e</StoredType>
-    </column>
-    <column id="454" parent="345" name="country">
-      <Position>10</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="455" parent="345" name="city">
-      <Position>11</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="456" parent="345" name="address">
-      <Position>12</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="457" parent="345" name="blood_type_id">
-      <Position>13</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="458" parent="345" name="created_at">
+    <column id="413" parent="342" name="donor_user_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="414" parent="342" name="receiver_user_id">
+      <Position>3</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="415" parent="342" name="request_type">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>enum(&apos;Donation&apos;, &apos;Emergency&apos;)|0e</StoredType>
+    </column>
+    <column id="416" parent="342" name="request_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="417" parent="342" name="blood_type_id">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="418" parent="342" name="component_id">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="419" parent="342" name="units_donated">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="420" parent="342" name="donation_date">
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="421" parent="342" name="donation_time">
+      <Position>10</Position>
+      <StoredType>time|0s</StoredType>
+    </column>
+    <column id="422" parent="342" name="status">
+      <DefaultExpression>&apos;Scheduled&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+      <StoredType>enum(&apos;Scheduled&apos;, &apos;Completed&apos;, &apos;Cancelled&apos;, &apos;Rejected&apos;)|0e</StoredType>
+    </column>
+    <column id="423" parent="342" name="progress">
+      <DefaultExpression>&apos;Receiver&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+      <StoredType>enum(&apos;Receiver&apos;, &apos;Processing&apos;, &apos;Accepted&apos;, &apos;Completed&apos;, &apos;Rejected&apos;)|0e</StoredType>
+    </column>
+    <column id="424" parent="342" name="notes">
+      <Position>13</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="425" parent="342" name="created_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <Position>14</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="459" parent="345" name="updated_at">
+    <column id="426" parent="342" name="updated_at">
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <OnUpdate>current_timestamp()</OnUpdate>
       <Position>15</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="460" parent="345" name="google_account">
-      <Position>16</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="461" parent="345" name="facebook_account">
-      <Position>17</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <foreign-key id="462" parent="345" name="users_ibfk_1">
+    <foreign-key id="427" parent="342" name="donations_ibfk_1">
+      <ColNames>donor_user_id</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="428" parent="342" name="donations_ibfk_2">
+      <ColNames>receiver_user_id</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="429" parent="342" name="donations_ibfk_3">
       <ColNames>blood_type_id</ColNames>
       <RefColNames>blood_type_id</RefColNames>
       <RefTableName>blood_types</RefTableName>
     </foreign-key>
-    <index id="463" parent="345" name="PRIMARY">
-      <ColNames>user_id</ColNames>
+    <foreign-key id="430" parent="342" name="donations_ibfk_4">
+      <ColNames>component_id</ColNames>
+      <RefColNames>component_id</RefColNames>
+      <RefTableName>blood_components</RefTableName>
+    </foreign-key>
+    <index id="431" parent="342" name="PRIMARY">
+      <ColNames>donation_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="464" parent="345" name="email">
-      <ColNames>email</ColNames>
+    <index id="432" parent="342" name="donor_user_id">
+      <ColNames>donor_user_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <index id="465" parent="345" name="phone_number">
-      <ColNames>phone_number</ColNames>
+    <index id="433" parent="342" name="receiver_user_id">
+      <ColNames>receiver_user_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <index id="466" parent="345" name="blood_type_id">
+    <index id="434" parent="342" name="blood_type_id">
       <ColNames>blood_type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="467" parent="345" name="PRIMARY">
+    <index id="435" parent="342" name="component_id">
+      <ColNames>component_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="436" parent="342" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="468" parent="345" name="email">
+    <column id="437" parent="343" name="request_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="438" parent="343" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="439" parent="343" name="blood_type_id">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="440" parent="343" name="component_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="441" parent="343" name="blood_units_required">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="442" parent="343" name="address">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="443" parent="343" name="reason">
+      <Position>7</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="444" parent="343" name="emergency_level">
+      <DefaultExpression>&apos;Low&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>enum(&apos;High&apos;, &apos;Medium&apos;, &apos;Low&apos;)|0e</StoredType>
+    </column>
+    <column id="445" parent="343" name="created_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <Position>9</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="446" parent="343" name="status">
+      <DefaultExpression>&apos;Pending&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StoredType>enum(&apos;Pending&apos;, &apos;Matched&apos;, &apos;Completed&apos;, &apos;Cancelled&apos;)|0e</StoredType>
+    </column>
+    <foreign-key id="447" parent="343" name="emergency_requests_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="448" parent="343" name="emergency_requests_ibfk_2">
+      <ColNames>blood_type_id</ColNames>
+      <RefColNames>blood_type_id</RefColNames>
+      <RefTableName>blood_types</RefTableName>
+    </foreign-key>
+    <foreign-key id="449" parent="343" name="emergency_requests_ibfk_3">
+      <ColNames>component_id</ColNames>
+      <RefColNames>component_id</RefColNames>
+      <RefTableName>blood_components</RefTableName>
+    </foreign-key>
+    <index id="450" parent="343" name="PRIMARY">
+      <ColNames>request_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="451" parent="343" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="452" parent="343" name="blood_type_id">
+      <ColNames>blood_type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="453" parent="343" name="component_id">
+      <ColNames>component_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="454" parent="343" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="455" parent="344" name="post_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="456" parent="344" name="priority">
+      <DefaultExpression>0</DefaultExpression>
+      <Position>2</Position>
+      <StoredType>smallint(6)|0s</StoredType>
+    </column>
+    <column id="457" parent="344" name="added_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="458" parent="344" name="featured_posts_ibfk_1">
+      <ColNames>post_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>post_id</RefColNames>
+      <RefTableName>posts</RefTableName>
+    </foreign-key>
+    <index id="459" parent="344" name="PRIMARY">
+      <ColNames>post_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="460" parent="344" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="461" parent="345" name="post_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="462" parent="345" name="title">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="463" parent="345" name="slug">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="464" parent="345" name="summary">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="465" parent="345" name="content">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>mediumtext|0s</StoredType>
+    </column>
+    <column id="466" parent="345" name="image_url">
+      <Position>6</Position>
+      <StoredType>mediumblob|0s</StoredType>
+    </column>
+    <column id="467" parent="345" name="published_at">
+      <Position>7</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="468" parent="345" name="author_id">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="469" parent="345" name="status">
+      <DefaultExpression>&apos;pending&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StoredType>enum(&apos;pending&apos;, &apos;approved&apos;, &apos;rejected&apos;)|0e</StoredType>
+    </column>
+    <column id="470" parent="345" name="category_id">
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="471" parent="345" name="approved_by">
+      <Position>11</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="472" parent="345" name="approved_at">
+      <Position>12</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="473" parent="345" name="created_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="474" parent="345" name="updated_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <OnUpdate>current_timestamp()</OnUpdate>
+      <Position>14</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="475" parent="345" name="posts_ibfk_2">
+      <ColNames>author_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="476" parent="345" name="posts_ibfk_1">
+      <ColNames>category_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>category_id</RefColNames>
+      <RefTableName>categories</RefTableName>
+    </foreign-key>
+    <foreign-key id="477" parent="345" name="posts_ibfk_3">
+      <ColNames>approved_by</ColNames>
+      <OnDelete>set-null</OnDelete>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="478" parent="345" name="PRIMARY">
+      <ColNames>post_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="479" parent="345" name="slug">
+      <ColNames>slug</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="480" parent="345" name="author_id">
+      <ColNames>author_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="481" parent="345" name="category_id">
+      <ColNames>category_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="482" parent="345" name="approved_by">
+      <ColNames>approved_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="483" parent="345" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="484" parent="345" name="slug">
+      <UnderlyingIndexName>slug</UnderlyingIndexName>
+    </key>
+    <column id="485" parent="346" name="request_blood_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="486" parent="346" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="487" parent="346" name="blood_type_id">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="488" parent="346" name="component_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="489" parent="346" name="donation_date">
+      <Position>5</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="490" parent="346" name="donation_time">
+      <Position>6</Position>
+      <StoredType>time|0s</StoredType>
+    </column>
+    <column id="491" parent="346" name="donated_blood_before">
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <column id="492" parent="346" name="health_status">
+      <Position>8</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="493" parent="346" name="medication_in_use">
+      <Position>9</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="494" parent="346" name="read_blood_donation_requirements">
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <column id="495" parent="346" name="created_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="496" parent="346" name="status">
+      <DefaultExpression>&apos;Pending&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+      <StoredType>enum(&apos;Pending&apos;, &apos;Matched&apos;, &apos;Completed&apos;, &apos;Cancelled&apos;)|0e</StoredType>
+    </column>
+    <foreign-key id="497" parent="346" name="request_blood_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="498" parent="346" name="request_blood_ibfk_2">
+      <ColNames>blood_type_id</ColNames>
+      <RefColNames>blood_type_id</RefColNames>
+      <RefTableName>blood_types</RefTableName>
+    </foreign-key>
+    <foreign-key id="499" parent="346" name="request_blood_ibfk_3">
+      <ColNames>component_id</ColNames>
+      <RefColNames>component_id</RefColNames>
+      <RefTableName>blood_components</RefTableName>
+    </foreign-key>
+    <index id="500" parent="346" name="PRIMARY">
+      <ColNames>request_blood_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="501" parent="346" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="502" parent="346" name="blood_type_id">
+      <ColNames>blood_type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="503" parent="346" name="component_id">
+      <ColNames>component_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="504" parent="346" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="505" parent="347" name="process_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="506" parent="347" name="request_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="507" parent="347" name="process_type">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>enum(&apos;Donation&apos;, &apos;Emergency&apos;)|0e</StoredType>
+    </column>
+    <column id="508" parent="347" name="status">
+      <DefaultExpression>&apos;Pending&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>enum(&apos;Pending&apos;, &apos;Matched&apos;, &apos;Completed&apos;, &apos;Cancelled&apos;)|0e</StoredType>
+    </column>
+    <column id="509" parent="347" name="handled_by">
+      <Position>5</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="510" parent="347" name="notes">
+      <Position>6</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="511" parent="347" name="created_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <Position>7</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="512" parent="347" name="updated_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <OnUpdate>current_timestamp()</OnUpdate>
+      <Position>8</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="513" parent="347" name="request_process_ibfk_1">
+      <ColNames>handled_by</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="514" parent="347" name="PRIMARY">
+      <ColNames>process_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="515" parent="347" name="handled_by">
+      <ColNames>handled_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="516" parent="347" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="517" parent="348" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="518" parent="348" name="designation">
+      <Position>2</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="519" parent="348" name="bio">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="520" parent="348" name="avatar_url">
+      <Position>4</Position>
+      <StoredType>mediumblob|0s</StoredType>
+    </column>
+    <foreign-key id="521" parent="348" name="user_profiles_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="522" parent="348" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="523" parent="348" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="524" parent="349" name="user_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="525" parent="349" name="first_name">
+      <Position>2</Position>
+      <StoredType>varchar(25)|0s</StoredType>
+    </column>
+    <column id="526" parent="349" name="last_name">
+      <Position>3</Position>
+      <StoredType>varchar(25)|0s</StoredType>
+    </column>
+    <column id="527" parent="349" name="date_of_birth">
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="528" parent="349" name="gender">
+      <Position>5</Position>
+      <StoredType>enum(&apos;Female&apos;, &apos;Male&apos;)|0e</StoredType>
+    </column>
+    <column id="529" parent="349" name="email">
+      <Position>6</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="530" parent="349" name="phone_number">
+      <Position>7</Position>
+      <StoredType>varchar(15)|0s</StoredType>
+    </column>
+    <column id="531" parent="349" name="password_hash">
+      <Position>8</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="532" parent="349" name="role">
+      <Position>9</Position>
+      <StoredType>enum(&apos;User&apos;, &apos;Staff&apos;, &apos;Admin&apos;)|0e</StoredType>
+    </column>
+    <column id="533" parent="349" name="country">
+      <Position>10</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="534" parent="349" name="city">
+      <Position>11</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="535" parent="349" name="google_account">
+      <Position>12</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="536" parent="349" name="facebook_account">
+      <Position>13</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="537" parent="349" name="address">
+      <Position>14</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="538" parent="349" name="blood_type_id">
+      <Position>15</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="539" parent="349" name="created_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <Position>16</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="540" parent="349" name="updated_at">
+      <DefaultExpression>current_timestamp()</DefaultExpression>
+      <OnUpdate>current_timestamp()</OnUpdate>
+      <Position>17</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="541" parent="349" name="users_ibfk_1">
+      <ColNames>blood_type_id</ColNames>
+      <RefColNames>blood_type_id</RefColNames>
+      <RefTableName>blood_types</RefTableName>
+    </foreign-key>
+    <index id="542" parent="349" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="543" parent="349" name="email">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="544" parent="349" name="phone_number">
+      <ColNames>phone_number</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="545" parent="349" name="blood_type_id">
+      <ColNames>blood_type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="546" parent="349" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="547" parent="349" name="email">
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
-    <key id="469" parent="345" name="phone_number">
+    <key id="548" parent="349" name="phone_number">
       <UnderlyingIndexName>phone_number</UnderlyingIndexName>
     </key>
   </database-model>
