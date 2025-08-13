@@ -23,13 +23,20 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     User getUserById(Long id);
 
     @Query("""
-        SELECT new com.royce.blood_donation.responses.UserProfileResponse(
-            u.lastName, u.email, b.type + b.rh, 
-        )
-        FROM  D
-        JOIN 
-        JOIN 
-        WHERE u.id = :id
+    SELECT new com.royce.blood_donation.responses.UserProfileResponse(
+        CONCAT(u.lastName, ' ', u.firstName),
+        u.email,
+        CONCAT(b.type, ' ', b.rh),
+        d.donationDate,
+        u.createdAt,
+        u.phoneNumber,
+        u.dateOfBirth,
+        u.address
+    )
+    FROM Donation d
+    JOIN d.donorUserId u
+    JOIN u.bloodTypeId b
+    WHERE d.status = 'COMPLETED'
 """)
     List<UserProfileResponse> findAllUsers();
 }

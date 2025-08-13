@@ -4,6 +4,7 @@ import com.royce.blood_donation.models.BaseEntity;
 import com.royce.blood_donation.models.blood.BloodComponents;
 import com.royce.blood_donation.models.blood.BloodType;
 import com.royce.blood_donation.models.enums.*;
+import com.royce.blood_donation.models.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,10 +23,12 @@ public class Donation extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "blood_type_id")
     private int donationId;
-    @Column(name = "donor_user_id")
-    private String donorUserId;
-    @Column(name = "receiver_user_id")
-    private String recipientUserId;
+    @ManyToOne
+    @JoinColumn(name = "donor_user_id", referencedColumnName = "user_id")
+    private User donorUserId;
+    @ManyToOne
+    @JoinColumn(name = "receiver_user_id", referencedColumnName = "user_id")
+    private User recipientUserId;
     @Enumerated(EnumType.STRING)
     @Column(name = "request_type")
     private RequestType requestType;
