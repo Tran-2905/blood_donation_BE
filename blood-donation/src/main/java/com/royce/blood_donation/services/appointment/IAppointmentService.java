@@ -9,6 +9,5 @@ import java.util.List;
 
 public interface IAppointmentService {
     public void createRequestDonation(RequestDonationDTO requestDonationDTO, User user);
-
-    public List<AppointmentResponse> getAllAppointments(String token);
+    public AppointmentResponse getAllAppointments(Long id);
 }

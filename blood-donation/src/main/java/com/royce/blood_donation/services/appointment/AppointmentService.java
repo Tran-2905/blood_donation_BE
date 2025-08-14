@@ -44,16 +44,21 @@ public class AppointmentService implements IAppointmentService {
                 .notes(requestDonationDTO.getNotes())
                 .acceptGeneralTerm(requestDonationDTO.isAcceptGeneralTerm())
                 .acceptContactTerm(requestDonationDTO.isAcceptContactTerm())
-                .status(Status.pending)
+                .status(Status.Pending)
                 .build();
         appointmentRepository.save(requestDonation);
     }
 
     @Override
-    public List<AppointmentResponse> getAllAppointments(String token) {
-        List<AppointmentResponse> appointmentResponses = new ArrayList<>();
-        List<Appointment> appointments = appointmentRepository.getAppointmentsByUser_Id(jwtService.extractUserId(token));
+    public AppointmentResponse getAllAppointments(Long id) {
+        AppointmentResponse appointmentResponses = new AppointmentResponse();
+        Appointment appointments = appointmentRepository.getAppointmentsByUser_Id(id);
+        if(appointments == null) {
+            appointmentResponses.setStatus("No appointments found");
+            return appointmentResponses;
+        }
         mapper.map(appointments, appointmentResponses);
+        appointmentResponses.setType(appointments.getBloodComponent().getComponentName().name());
         return appointmentResponses;
     }
 

@@ -53,7 +53,7 @@ public class PostService implements IPostService {
             post.setAuthor(managedUser);
             post.setImageUrl(image_url.getBytes());
             post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
-            post.setStatus(Status.pending);
+            post.setStatus(Status.Pending);
             postRepository.save(post);
         }catch (Exception e){
             System.out.println(e.getMessage());

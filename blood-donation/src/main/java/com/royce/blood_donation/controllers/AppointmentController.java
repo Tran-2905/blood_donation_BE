@@ -2,9 +2,11 @@ package com.royce.blood_donation.controllers;
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
 import com.royce.blood_donation.models.user.User;
+import com.royce.blood_donation.responses.AppointmentResponse;
 import com.royce.blood_donation.services.appointment.IAppointmentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
@@ -18,7 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/v1/appointment")
 public class AppointmentController {
-    private final IAppointmentService donationRegistration;
+    private final IAppointmentService appointmentService;
     @PostMapping("/add")
     public ResponseEntity<?> addRequest(@RequestBody @Valid RequestDonationDTO requestDonationDTO, BindingResult result, @AuthenticationPrincipal User user) {
         try{
@@ -26,14 +28,16 @@ public class AppointmentController {
                 List<String> errors = result.getFieldErrors().stream().map(FieldError::getDefaultMessage).toList();
                 return ResponseEntity.badRequest().body(errors.toString());
             }
-            donationRegistration.createRequestDonation(requestDonationDTO, user);
+            appointmentService.createRequestDonation(requestDonationDTO, user);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-//    public ResponseEntity<?> getAppointmentsByUser(@AuthenticationPrincipal User user){
-//
-//    }
+    @GetMapping("/appointment")
+    public ResponseEntity<?> getAppointmentsByUser(@AuthenticationPrincipal User user){
+            AppointmentResponse app = appointmentService.getAllAppointments(user.getId());
+        return  ResponseEntity.ok(app);
+    }
 }
