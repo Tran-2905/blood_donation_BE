@@ -2,9 +2,11 @@ package com.royce.blood_donation.configuration;
 
 import com.royce.blood_donation.dtos.PostCategoryDTO;
 import com.royce.blood_donation.dtos.PostDTO;
+import com.royce.blood_donation.models.appointment.Appointment;
 import com.royce.blood_donation.models.blog.PostCategory;
 import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.user.UserProfile;
+import com.royce.blood_donation.responses.AppointmentResponse;
 import com.royce.blood_donation.responses.PostResponse;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -31,6 +33,12 @@ public class MapperConfig {
         mapper.createTypeMap(PostCategoryDTO.class, PostCategory.class)
                 .addMappings(m -> {
                     m.map(PostCategoryDTO :: getName, PostCategory::setName);
+                });
+        mapper.createTypeMap(Appointment.class, AppointmentResponse.class)
+                .addMappings(m -> {
+                    m.map(Appointment::getAvailableDate, AppointmentResponse::setDate);
+                    m.map(Appointment::getAvailableTime, AppointmentResponse::setTime);
+                    m.map(Appointment::getStatus, AppointmentResponse::setStatus);
                 });
         return mapper;
 

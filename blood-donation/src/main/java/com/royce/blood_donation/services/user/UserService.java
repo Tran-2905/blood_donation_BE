@@ -16,8 +16,8 @@ public class UserService implements IUserService{
     private final IJWTService jwtService;
 
     @Override
-    public UserProfileResponse getUserInfo(String accessToken) {
-        Long id= jwtService.extractUserId(accessToken);
+    public UserProfileResponse getUserInfo(Long id) {
+
         return userRepository.findUserWithLatestDonation(id);
     }
 }

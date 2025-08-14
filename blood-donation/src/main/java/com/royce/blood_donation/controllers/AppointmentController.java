@@ -2,7 +2,7 @@ package com.royce.blood_donation.controllers;
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
 import com.royce.blood_donation.models.user.User;
-import com.royce.blood_donation.services.request.IDonationRegistration;
+import com.royce.blood_donation.services.appointment.IAppointmentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,9 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/request-donation")
-public class RequestController {
-    private final IDonationRegistration donationRegistration;
+@RequestMapping("api/v1/appointment")
+public class AppointmentController {
+    private final IAppointmentService donationRegistration;
     @PostMapping("/add")
     public ResponseEntity<?> addRequest(@RequestBody @Valid RequestDonationDTO requestDonationDTO, BindingResult result, @AuthenticationPrincipal User user) {
         try{
@@ -32,4 +32,8 @@ public class RequestController {
             throw new RuntimeException(e);
         }
     }
+
+//    public ResponseEntity<?> getAppointmentsByUser(@AuthenticationPrincipal User user){
+//
+//    }
 }
