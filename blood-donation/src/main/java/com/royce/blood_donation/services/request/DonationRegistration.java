@@ -2,7 +2,7 @@ package com.royce.blood_donation.services.request;
 
 
 import com.royce.blood_donation.dtos.RequestDonationDTO;
-import com.royce.blood_donation.models.request.RequestDonation;
+import com.royce.blood_donation.models.appointment.Appointment;
 import com.royce.blood_donation.models.user.User;
 import com.royce.blood_donation.models.enums.Status;
 import com.royce.blood_donation.repositories.IBloodTypeRepository;
@@ -19,7 +19,7 @@ public class DonationRegistration implements IDonationRegistration {
     private final IBloodTypeRepository bloodTypeRepository;
     public void createRequestDonation(RequestDonationDTO requestDonationDTO, User user) {
 
-        RequestDonation requestDonation = RequestDonation.builder()
+        Appointment requestDonation = Appointment.builder()
                 .user(userRepository.findUserById(user.getId()))
                 .fullName(requestDonationDTO.getFullName())
                 .phoneNumber(requestDonationDTO.getPhoneNumber())

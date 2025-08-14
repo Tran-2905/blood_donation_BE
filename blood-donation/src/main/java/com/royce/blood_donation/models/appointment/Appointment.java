@@ -1,4 +1,4 @@
-package com.royce.blood_donation.models.request;
+package com.royce.blood_donation.models.appointment;
 
 import com.royce.blood_donation.models.BaseEntity;
 import com.royce.blood_donation.models.blood.BloodType;
@@ -17,11 +17,11 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Builder
-@Table(name = "donation_registrations")
-public class RequestDonation extends BaseEntity {
+@Table(name = "Appointments")
+public class Appointment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "registration_id")
+    @Column(name = "appointment_id")
     private int id;
 
     @ManyToOne
@@ -60,6 +60,7 @@ public class RequestDonation extends BaseEntity {
     @Column(name = "available_time")
     private String availableTime;
 
+    @Column(name = "notes")
     private String notes;
 
     @Column(name = "accept_general_term")
@@ -69,7 +70,7 @@ public class RequestDonation extends BaseEntity {
     private boolean acceptContactTerm;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private Status status;
-
 
 }
