@@ -52,11 +52,11 @@ public class Donation extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private StatusDonation status; // Enum: SCHEDULED, COMPLETED, CANCELLED
+    private StatusDonation status;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "progress")
-    private Progress progress; // Enum: RECEIVED, PROCESSING, ACCEPTED
+    private Progress progress;
 
     @Column(name = "notes")
     private String notes;

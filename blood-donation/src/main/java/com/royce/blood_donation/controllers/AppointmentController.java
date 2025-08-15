@@ -35,7 +35,7 @@ public class AppointmentController {
         }
     }
 
-    @GetMapping("/appointment")
+    @GetMapping("/all")
     public ResponseEntity<?> getAppointmentsByUser(@AuthenticationPrincipal User user){
             AppointmentResponse app = appointmentService.getAllAppointments(user.getId());
         return  ResponseEntity.ok(app);
