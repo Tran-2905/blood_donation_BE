@@ -9,6 +9,7 @@ import com.royce.blood_donation.models.user.UserProfile;
 import com.royce.blood_donation.repositories.IPostRepository;
 import com.royce.blood_donation.repositories.IUserProfileRepository;
 import com.royce.blood_donation.repositories.IUserRepository;
+import com.royce.blood_donation.responses.PostFeatureResponse;
 import com.royce.blood_donation.responses.PostResponse;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -53,7 +55,7 @@ public class PostService implements IPostService {
             post.setAuthor(managedUser);
             post.setImageUrl(image_url.getBytes());
             post.setSlug(post.getTitle().toLowerCase().replaceAll(" ", "-"));
-            post.setStatus(Status.Pending);
+            post.setStatus(Status.pending);
             postRepository.save(post);
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -69,6 +71,20 @@ public class PostService implements IPostService {
     public byte[] getPostImage(Long id) {
         Post post = postRepository.findById(id).orElseThrow();
         return post.getImageUrl(); // Trường kiểu byte[], map với MEDIUMBLOB DB
+    }
+
+    @Override
+    public List<PostFeatureResponse> getFeaturedPosts(int limit) {
+        List<Post> posts = postRepository.findTop20ByOrderByApprovedAtDesc();
+        List<PostFeatureResponse> postFeatureResponses = new ArrayList<>();
+        for(Post post : posts){
+            PostFeatureResponse postFeatureResponse = mapper.map(post, PostFeatureResponse.class);
+            postFeatureResponses.add(postFeatureResponse);
+            if(postFeatureResponses.size() == limit){
+                break;
+            }
+        }
+        return postFeatureResponses;
     }
 
     @Override

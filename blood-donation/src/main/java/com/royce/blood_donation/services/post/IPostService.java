@@ -4,6 +4,7 @@ import com.royce.blood_donation.dtos.PostDTO;
 import com.royce.blood_donation.models.blog.Post;
 import com.royce.blood_donation.models.blog.PostCategory;
 import com.royce.blood_donation.models.user.User;
+import com.royce.blood_donation.responses.PostFeatureResponse;
 import com.royce.blood_donation.responses.PostResponse;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,4 +16,5 @@ public interface IPostService {
     public void deletePost(Long id);
     public List<PostResponse> getAllPosts();
     public byte[] getPostImage(Long id);
+    public List<PostFeatureResponse> getFeaturedPosts(int limit);
 }

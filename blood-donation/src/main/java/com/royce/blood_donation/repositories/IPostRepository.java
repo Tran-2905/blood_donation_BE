@@ -35,4 +35,6 @@ public interface IPostRepository extends JpaRepository<Post, Long> {
         WHERE p.id = :id
     """)
     PostResponse findAllPostsById(Long id);
+
+    List<Post> findTop20ByOrderByApprovedAtDesc();
 }

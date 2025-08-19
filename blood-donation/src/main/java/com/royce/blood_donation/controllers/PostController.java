@@ -61,4 +61,9 @@ public class PostController {
     public ResponseEntity<?> getAllPosts(){
         return new ResponseEntity<>(postService.getAllPosts(), HttpStatus.OK);
     }
+
+    @GetMapping("/feature/all")
+    public ResponseEntity<?> getAllFeaturePosts(){
+        return new ResponseEntity<>(postService.getFeaturedPosts(3), HttpStatus.OK);
+    }
 }

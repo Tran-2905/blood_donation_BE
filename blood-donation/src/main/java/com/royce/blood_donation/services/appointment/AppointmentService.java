@@ -44,7 +44,7 @@ public class AppointmentService implements IAppointmentService {
                 .notes(requestDonationDTO.getNotes())
                 .acceptGeneralTerm(requestDonationDTO.isAcceptGeneralTerm())
                 .acceptContactTerm(requestDonationDTO.isAcceptContactTerm())
-                .status(Status.Pending)
+                .status(Status.pending)
                 .build();
         appointmentRepository.save(requestDonation);
     }
