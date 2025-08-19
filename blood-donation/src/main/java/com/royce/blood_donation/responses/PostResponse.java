@@ -1,5 +1,6 @@
 package com.royce.blood_donation.responses;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class PostResponse {
     @JsonProperty("author_name")
     private String authorName;
     @JsonProperty("approved_at")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime approvedAt;
     @JsonProperty("image_url")
     private byte[] imageUrl;
