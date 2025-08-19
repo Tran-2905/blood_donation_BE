@@ -21,9 +21,12 @@ public class DonationService implements IDonationService {
     @Override
     public List<DonationResponse> getAllDonations(Long id) {
         List<Donation> donations = donationRepository.getAllByDonorUserId_Id(id);
-        return donations.stream()
-                .map(donation -> modelMapper.map(donation, DonationResponse.class))
-                .collect(Collectors.toList());
+        List<DonationResponse> donationResponses = new ArrayList<>();
+        for(Donation donation : donations){
+            DonationResponse donationResponse = new DonationResponse(donation);
+            donationResponses.add(donationResponse);
+        }
+        return donationResponses;
     }
 }
 

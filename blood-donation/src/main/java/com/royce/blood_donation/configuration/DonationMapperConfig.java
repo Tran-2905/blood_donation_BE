@@ -40,10 +40,10 @@ public class DonationMapperConfig {
         PropertyMap<Donation, DonationResponse> donationMap = new PropertyMap<Donation, DonationResponse>() {
             @Override
             protected void configure() {
-                using(userToIdConverter).map(source.getDonorUserId(), destination.getDonorUserId());
+                using(userToIdConverter).map(source.getDonorUserId().getId(), destination.getDonorUserId());
                 using(userToIdConverter).map(source.getRecipientUserId(), destination.getRecipientUserId());
-                using(bloodTypeToNameConverter).map(source.getBloodTypeId(), destination.getBloodType());
-                using(componentToNameConverter).map(source.getComponentId(), destination.getComponent());
+                using(bloodTypeToNameConverter).map(source.getBloodTypeId().getType(), destination.getBloodType());
+                using(componentToNameConverter).map(source.getComponentId().getComponentName().name(), destination.getComponent());
                 // Các trường còn lại ModelMapper tự map theo tên mặc định
             }
         };
