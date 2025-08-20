@@ -27,4 +27,9 @@ public class BloodType {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "percent")
+    private String percent;
+
+    @Column(name = "fact")
+    private String fact;
 }
