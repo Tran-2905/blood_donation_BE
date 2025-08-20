@@ -37,4 +37,6 @@ public interface IPostRepository extends JpaRepository<Post, Long> {
     PostResponse findAllPostsById(Long id);
 
     List<Post> findTop20ByOrderByApprovedAtDesc();
+
+    List<Post> findAllPostsByCategory_Id(int categoryId);
 }

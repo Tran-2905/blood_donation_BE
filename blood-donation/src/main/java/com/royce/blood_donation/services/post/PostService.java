@@ -70,7 +70,18 @@ public class PostService implements IPostService {
     @Override
     public byte[] getPostImage(Long id) {
         Post post = postRepository.findById(id).orElseThrow();
-        return post.getImageUrl(); // Trường kiểu byte[], map với MEDIUMBLOB DB
+        return post.getImageUrl();
+    }
+
+    @Override
+    public List<PostResponse> getPostByCategory(int id){
+        List<Post> posts = postRepository.findAllPostsByCategory_Id(id);
+        List<PostResponse> postResponses = new ArrayList<>();
+        for(Post post : posts){
+            PostResponse postResponse = mapper.map(post, PostResponse.class);
+            postResponses.add(postResponse);
+        }
+        return postResponses;
     }
 
     @Override
@@ -96,6 +107,8 @@ public class PostService implements IPostService {
     public List<PostResponse> getAllPosts() {
         return postRepository.findAllPostsWithAuthorAndCategory();
     }
+
+
 
     public String uploadImages( MultipartFile file ){
         try {

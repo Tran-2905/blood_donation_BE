@@ -17,4 +17,5 @@ public interface IPostService {
     public List<PostResponse> getAllPosts();
     public byte[] getPostImage(Long id);
     public List<PostFeatureResponse> getFeaturedPosts(int limit);
+    List<PostResponse> getPostByCategory(int id);
 }
