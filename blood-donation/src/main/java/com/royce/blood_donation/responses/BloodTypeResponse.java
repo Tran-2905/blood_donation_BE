@@ -13,21 +13,33 @@ import lombok.*;
 public class BloodTypeResponse {
     private int bloodTypeId;
     private String bloodType;
+    private String description;
+    private String percent;
+    private String fact;
     public static BloodTypeResponse getBloodTypeResponse(BloodType bloodType) {
         if(bloodType.getRh().equals(RhType.Positive)){
             return BloodTypeResponse.builder()
                     .bloodType(bloodType.getType()+"+")
                     .bloodTypeId(bloodType.getId())
+                    .description(bloodType.getDescription())
+                    .percent(bloodType.getPercent())
+                    .fact(bloodType.getFact())
                     .build();
         }else if (bloodType.getRh().equals(RhType.Negative)){
             return BloodTypeResponse.builder()
                     .bloodType(bloodType.getType()+"-")
                     .bloodTypeId(bloodType.getId())
+                    .description(bloodType.getDescription())
+                    .percent(bloodType.getPercent())
+                    .fact(bloodType.getFact())
                     .build();
         }
             return BloodTypeResponse.builder()
                     .bloodType(bloodType.getType())
                     .bloodTypeId(bloodType.getId())
+                    .description(bloodType.getDescription())
+                    .percent(bloodType.getPercent())
+                    .fact(bloodType.getFact())
                     .build();
     }
 }
